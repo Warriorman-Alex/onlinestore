@@ -4,7 +4,7 @@
     <c:forEach var="category" items="${catalog}">
 
         <c:choose>
-            <c:when test="${category.id == pageContext.request.queryString}">
+            <c:when test="${category.name == selectedCategory.name}">
                 <div class="categoryButton" id="selectedCategory">
                     <span class="categoryText">
                         ${category.name}
@@ -42,7 +42,7 @@
                     <span class="smallText">${product.description}</span>
                 </td>
                 <td>
-                    &euro; ${product.price} / unit
+                    &euro; ${product.price} 
                 </td>
                 <td>
                     <form action="addToCart" method="post">
@@ -50,6 +50,7 @@
                                name="productId"
                                value="${product.id}">
                         <input type="submit"
+                               name="submit"
                                value="add to cart">
                     </form>
                 </td>

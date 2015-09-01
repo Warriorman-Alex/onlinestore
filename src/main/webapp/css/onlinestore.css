@@ -3,6 +3,7 @@ body {
     width: 850px;
     text-align: center;
     margin: 20px auto;
+    color: #444;
 }
 
 hr {
@@ -20,8 +21,25 @@ table {
     border: solid 1px #f5eabe;
 }
 
+a {
+    color: inherit;
+    text-decoration: underline;
+}
 
-#main { background: #eee }
+a:hover { text-decoration: none }
+
+a:visited { color: inherit }
+
+img { border: none }
+
+input, select { margin: 5px }
+
+li { margin: 10px 0 }
+
+label { line-height: 30px }
+
+
+#main { background: #f7f7e9 }
 
 #singleColumn {
     margin: 20px 30px;
@@ -43,6 +61,8 @@ table {
 
 .smallText { font-size: small }
 
+.reallySmallText { font-size: xx-small }
+
 .header {
     background-color: #c3e3e0;
     height: 30px;
@@ -52,6 +72,7 @@ table {
 #header {
     height: 250px;
     background: #aaa;
+    background: url(../img/front.png) no-repeat 28px 28px;
 }
 
 #logo {
@@ -75,7 +96,22 @@ table {
     height: 50px;
     width: 850px;
     float: right;
-    background: #ccc;
+    
+}
+
+#cart {
+    position: absolute;
+    margin: 5px 0 0 2px;
+}
+
+.horizontalMargin {
+    margin-left: 28px;
+    margin-right: 5px
+}
+
+#viewCart {
+    text-align: left;
+    width: 210px;
 }
 
 .headerWidget {
@@ -94,6 +130,13 @@ table {
     background: #aaa;
 }
 
+#footerText { margin-top: 5px }
+
+#footerDivider {
+    margin: 0 25px;
+    width: 300px;
+}
+
 #indexLeftColumn {
     height: 400px;
     width: 350px;
@@ -108,6 +151,11 @@ table {
     background: #eee;
 }
 
+#welcomeText {
+    margin: 30px 5px 0 30px;
+    line-height: 1.4em;
+}
+
 .categoryBox {
     height: 100px;
     width: 100px;
@@ -116,9 +164,23 @@ table {
     background: #ccc;
 }
 
+.categoryLabel {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.7;
+    height: 40px;
+    width: 210px;
+    margin: 2px;
+}
+
 .categoryLabelText {
     line-height: 150%;
     font-size: x-large;
+}
+
+.categoryImage {
+    padding: 1px;
+    border:solid 1px #555;
 }
 
 /* category page styles */
@@ -193,6 +255,14 @@ table {
     height: 280px;
 }
 
+#checkoutTable td {
+    vertical-align: top;
+    text-align: right;
+    margin: 5px;
+}
+
+.inputField { width: 190px }
+
 #infoBox {
     width: 300px;
     padding-left: 30px;
@@ -205,6 +275,18 @@ table {
     height: 128px;
     background-color: #c3e3e0;
 }
+
+#priceBox td {
+    text-align: right;
+    padding: 5px;
+}
+
+.checkoutPriceColumn {
+    width: 80px;
+    font-weight: bold;
+}
+
+.total { border-top: 1px solid #444 }
 
 
 /* confirmation page styles */

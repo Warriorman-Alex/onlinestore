@@ -19,6 +19,7 @@
 <div id="indexRightColumn">
     <c:forEach var="category" items="${catalog}">
         <div class="categoryBox">
+            //TODO: import jstl url tag
             <a href="catalog?${category.id}">
                 <span class="categoryLabelText">${category.name}</span>
 

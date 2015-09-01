@@ -1,3 +1,6 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,12 +20,61 @@
                     </div>
 
                     <div class="headerWidget">
-                        [ shopping cart widget ]
+                        <c:if test="${!empty cart && cart.numberOfItems != 0 &&
+
+                                      !fn:contains(pageContext.request.servletPath,'/check_page') &&
+                                      requestScope['javax.servlet.forward.servlet_path'] ne '/check_page' &&
+
+                                      !fn:contains(pageContext.request.servletPath,'/cart_page') &&
+                                      requestScope['javax.servlet.forward.servlet_path'] ne '/cart_page'}">
+
+                              <a href="checkout" class="bubble">
+                                  proceed to checkout &#x279f;
+                              </a>
+                        </c:if>
+                    </div>
+
+                    <div class="headerWidget" id="viewCart">
+
+                        <img src="img/cart.gif" alt="shopping cart icon" id="cart">
+
+                        <%-- If 'numberOfItems' property doesn't exist, or if number of items
+                             in cart is 0, output '0', otherwise output 'numberOfItems' --%>
+                        <span class="horizontalMargin">
+                            <c:choose>
+                                <c:when test="${cart.numberOfItems == null}">
+                                    0
+                                </c:when>
+                                <c:otherwise>
+                                    ${cart.numberOfItems}
+                                </c:otherwise>
+                            </c:choose>
+
+                            <%-- Handle singular/plural forms of 'item' --%>
+                            <c:choose>
+                                <c:when test="${cart.numberOfItems == 1}">
+                                    item
+                                </c:when>
+                                <c:otherwise>
+                                    items
+                                </c:otherwise>
+                            </c:choose>
+                        </span>
+
+                        <c:if test="${!empty cart && cart.numberOfItems != 0 &&
+
+                                      !fn:contains(pageContext.request.servletPath,'/cart_page') &&
+                                      requestScope['javax.servlet.forward.servlet_path'] ne '/cart_page'}">
+
+                              <a href="viewCart" class="bubble">
+                                  view cart
+                              </a>
+                        </c:if>
                     </div>
 
                 </div>
 
-                <a href="#">
+                <a href="index.jsp">
                     <img src="img/logo.png" id="logo" alt="Online Store logo">
                 </a>
 
