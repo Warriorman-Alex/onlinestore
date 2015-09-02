@@ -12,7 +12,7 @@
                 </div>
             </c:when>
             <c:otherwise>
-                <a href="catalog?${category.id}" class="categoryButton">
+                <a href="<c:url value='catalog?${category.id}'/>" class="categoryButton">
                     <div class="categoryText">
                         ${category.name}
                     </div>
@@ -45,7 +45,7 @@
                     &euro; ${product.price} 
                 </td>
                 <td>
-                    <form action="addToCart" method="post">
+                    <form action="<c:url value='addToCart'/>" method="post">
                         <input type="hidden"
                                name="productId"
                                value="${product.id}">

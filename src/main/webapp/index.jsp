@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <div id="indexLeftColumn">
     <div id="welcomeText">
@@ -19,8 +19,9 @@
 <div id="indexRightColumn">
     <c:forEach var="category" items="${catalog}">
         <div class="categoryBox">
-            //TODO: import jstl url tag
-            <a href="catalog?${category.id}">
+            
+            <a href="<c:url value='catalog?${category.id}'/>">
+                
                 <span class="categoryLabelText">${category.name}</span>
 
                 <img src="${initParam.catalogImagePath}${category.name}.jpg"
