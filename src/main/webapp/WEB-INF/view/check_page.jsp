@@ -1,14 +1,76 @@
 
 
+
+<script src="js/jquery.validate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#checkoutForm").validate({
+            rules: {
+                name: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    number: true,
+                    minlength: 9
+                },
+                address: {
+                    required: true
+                },
+                creditcard: {
+                    required: true,
+                    creditcard: true
+                }
+            }
+        });
+    });
+</script>
+
 <div id="centerColumn">
 
     <h2>checkout</h2>
 
     <p>In order to purchase the items in your shopping cart, please provide us with the following information:</p>
 
-    <form action="<c:url value='purchase'/>" method="post">
+    <c:if test="${!empty orderFailureFlag}">
+        <p class="error" style="color:#CC0000">We were unable to process your order. Please try again!</p>
+    </c:if>
 
+    <form action="<c:url value='purchase'/>" method="post">
         <table id="checkoutTable">
+            <c:if test="${!empty validationErrorFlag}">
+                
+                <tr>
+                    <td colspan="2" style="text-align:left">
+                        <span class="error smallText" style="color:#CC0000">Please provide valid entries for the following field(s):
+
+                            <c:if test="${!empty nameError}">
+                                <br><span class="indent"><strong>name</strong> (e.g., Alex Trofymenko)</span>
+                            </c:if>
+                            <c:if test="${!empty emailError}">
+                                <br><span class="indent"><strong>email</strong> (e.g., a.trofym@gmail.com)</span>
+                            </c:if>
+                            <c:if test="${!empty phoneError}">
+                                <br><span class="indent"><strong>phone</strong> (e.g., 222333444)</span>
+                            </c:if>
+                            <c:if test="${!empty addressError}">
+                                <br><span class="indent"><strong>address</strong> (e.g., Borisoglebskaya 1)</span>
+                            </c:if>
+                            <c:if test="${!empty cityRegionError}">
+                                <br><span class="indent"><strong>city region</strong> (e.g., 1)</span>
+                            </c:if>
+                            <c:if test="${!empty ccNumberError}">
+                                <br><span class="indent"><strong>credit card</strong> (e.g., 1111-2222-3333-4444)</span>
+                            </c:if>
+
+                        </span>
+                    </td>
+                </tr>
+            </c:if>
             <tr>
                 <td><label for="name">name:</label></td>
                 <td class="inputField">
@@ -55,10 +117,10 @@
                     <br>
                     prague
                     <select name="cityRegion">
-                      <c:forEach begin="1" end="10" var="regionNumber">
-                        <option value="${regionNumber}"
-                                <c:if test="${param.cityRegion eq regionNumber}">selected</c:if>>${regionNumber}</option>
-                      </c:forEach>
+                        <c:forEach begin="1" end="10" var="regionNumber">
+                            <option value="${regionNumber}"
+                                    <c:if test="${param.cityRegion eq regionNumber}">selected</c:if>>${regionNumber}</option>
+                        </c:forEach>
                     </select>
                 </td>
             </tr>
@@ -78,9 +140,7 @@
                     <input type="submit" value="submit purchase">
                 </td>
             </tr>
-
         </table>
-
     </form>
 
     <div id="infoBox">

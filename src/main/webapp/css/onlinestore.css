@@ -10,8 +10,6 @@ hr {
     border: 0;
     background-color: #333;
     height: 1px;
-    margin: 0 25px;
-    width: 300px;
 }
 
 table {
@@ -38,7 +36,14 @@ li { margin: 10px 0 }
 
 label { line-height: 30px }
 
+label.error {
+    font-size: smaller;
+    line-height: 20px;
+    font-style: italic;
+}
 
+
+/* general styles */
 #main { background: #f7f7e9 }
 
 #singleColumn {
@@ -55,6 +60,8 @@ label { line-height: 30px }
     background-color: #f5eabe;
     padding: 5px;
     color: inherit;
+    display: inline;
+    border-radius: 4px;
 }
 
 .hMargin { margin: 0 30px }
@@ -68,16 +75,26 @@ label { line-height: 30px }
     height: 30px;
 }
 
+.error {
+    color: #c00;
+    font-style: italic;
+}
 
+.tableHeading {
+    font-weight: bold;
+    background-color: #edf8f7;
+}
+
+
+/* styles for elements contained in the header, i.e.,
+   shopping cart widget, language toggle, and logo */
 #header {
+    width: 850px;
     height: 250px;
-    background: #aaa;
-    background: url(../img/front.png) no-repeat 28px 28px;
+    background: url(../img/stalk.png) no-repeat 28px 28px;
 }
 
 #logo {
-    height: 155px;
-    width: 155px;
     float: left;
     margin-left: 30px;
     margin-top: -20px;
@@ -86,7 +103,7 @@ label { line-height: 30px }
 #logoText {
     float: left;
     margin: 20px 0 0 70px;
-    /* font styles apply to text within alt tags */
+    /* font styles apply to text within img alt attribute */
     font-family: 'American Typewriter', Courier, monospace;
     font-size: 50px;
     color: #333;
@@ -96,7 +113,6 @@ label { line-height: 30px }
     height: 50px;
     width: 850px;
     float: right;
-    
 }
 
 #cart {
@@ -116,18 +132,18 @@ label { line-height: 30px }
 
 .headerWidget {
     width: 194px;
-    margin: 20px 2px;
+    margin: 20px 0;
     font-size: small;
     float: right;
     line-height: 25px;
-    background: #aaa;
 }
 
+
+/* footer styles */
 #footer {
     height: 60px;
     width: 350px;
     clear: left;
-    background: #aaa;
 }
 
 #footerText { margin-top: 5px }
@@ -137,18 +153,20 @@ label { line-height: 30px }
     width: 300px;
 }
 
+
+/* index page styles */
 #indexLeftColumn {
+    text-align: left;
     height: 400px;
     width: 350px;
     float: left;
-    background: #ccc;
 }
 
 #indexRightColumn {
+    text-align: left;
     height: 400px;
     width: 500px;
     float: left;
-    background: #eee;
 }
 
 #welcomeText {
@@ -157,12 +175,14 @@ label { line-height: 30px }
 }
 
 .categoryBox {
-    height: 100px;
-    width: 100px;
+    height: 176px;
+    width: 212px;
     margin: 21px 14px 6px;
     float: inherit;
-    background: #ccc;
 }
+
+/* Safari - disables underline for category boxes on index page */
+.categoryBox a { text-decoration: none }
 
 .categoryLabel {
     position: absolute;
@@ -174,14 +194,17 @@ label { line-height: 30px }
 }
 
 .categoryLabelText {
+    position: absolute;
     line-height: 150%;
     font-size: x-large;
+    margin: 3px 10px;
 }
 
 .categoryImage {
     padding: 1px;
     border:solid 1px #555;
 }
+
 
 /* category page styles */
 #categoryLeftColumn {
@@ -202,6 +225,7 @@ label { line-height: 30px }
     padding: 13px;
     display: block;
     background-color: #d3ede8;
+    border-radius: 4px;
 }
 
 #selectedCategory {
@@ -211,11 +235,13 @@ label { line-height: 30px }
 }
 
 #categoryTitle {
-    margin: -34px 180px 0 0;
+    margin-top: -40px;
+    right: 385px;
     font-size: x-large;
-    float: right;
+    position: absolute;
     background-color: #f5eabe;
     padding: 7px;
+    border-radius: 4px;
 }
 
 .categoryText {
@@ -223,7 +249,13 @@ label { line-height: 30px }
     font-size: x-large;
 }
 
-#productTable { width: 600px }
+#productTable {
+    width: 600px;
+
+    /* styles to collaborate with rounded categoryLabel */
+    position: relative;
+    z-index: 1;
+}
 
 #productTable tr { height: 90px }
 
@@ -249,10 +281,11 @@ label { line-height: 30px }
 
 /* checkout page styles */
 #checkoutTable {
-    width: 360px;
+    width: 405px;
+    padding: 10px;
     background-color: #f5eabe;
     float: left;
-    height: 280px;
+    border-radius: 4px;
 }
 
 #checkoutTable td {
@@ -263,17 +296,13 @@ label { line-height: 30px }
 
 .inputField { width: 190px }
 
-#infoBox {
-    width: 300px;
-    padding-left: 30px;
-    float: left;
-}
+#infoBox { padding: 10px 25px 0 460px }
 
 #priceBox {
     padding: 10px;
-    margin: 10px 0;
-    height: 128px;
+    border: 1px solid #c3e3e0;
     background-color: #c3e3e0;
+    border-radius: 4px;
 }
 
 #priceBox td {
@@ -288,6 +317,8 @@ label { line-height: 30px }
 
 .total { border-top: 1px solid #444 }
 
+.indent { margin-left: 6em }
+
 
 /* confirmation page styles */
 #confirmationText {
@@ -295,7 +326,7 @@ label { line-height: 30px }
     padding: 10px;
     background-color: #f5eabe;
     float: left;
-    width:540px;
+    border-radius: 4px;
 }
 
 .summaryColumn {
@@ -304,16 +335,50 @@ label { line-height: 30px }
     float: left;
 }
 
-#orderSummaryTable {
-    width: 100%;
-    text-align: left;
-    height: 200px;
+.detailsTable { text-align: left }
+
+.detailsTable th { padding: 5px 10px }
+
+.detailsTable td {
+    padding: 5px 10px 5px 20px;
+    font-size: small;
+    font-family: "Courier New", courier, monospace;
 }
+
+#orderSummaryTable { width: 100% }
 
 #deliveryAddressTable {
     width: 70%;
     margin-left: 15%;
-    text-align: left;
-    height: 200px;
 }
 
+#deliveryAddressTable td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.quantityColumn {
+    text-align: center;
+    width: 62px;
+}
+
+.confirmationPriceColumn {
+    width: 90px;
+    font-weight: normal;
+}
+
+#deliverySurchargeCellLeft {
+    text-align: right;
+    padding: 0;
+}
+
+#deliverySurchargeCellRight { padding: 0 20px }
+
+#totalCellLeft {
+    text-align: right;
+    padding: 0;
+}
+
+#totalCellRight { padding: 0 20px }
+
+#dateProcessedRow { padding: 2px 0 10px 20px }

@@ -9,7 +9,6 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -17,12 +16,10 @@ import javax.validation.constraints.NotNull;
  */
 @Embeddable
 public class OrderedProductPK implements Serializable {
-    @Basic(optional = false)
-    @NotNull
+    @Basic(optional = false)    
     @Column(name = "customer_order_id")
     private int customerOrderId;
-    @Basic(optional = false)
-    @NotNull
+    @Basic(optional = false)    
     @Column(name = "product_id")
     private int productId;
 
