@@ -48,7 +48,8 @@
 
             <tr class="lightBlue">
                 <td colspan="2" id="totalCellLeft"><strong><fmt:message key='total'/></strong></td>
-                <td id="totalCellRight">&euro; ${orderRecord.amount}</td>
+                <td id="totalCellRight">&euro; <fmt:formatNumber type="number" 
+                                  maxFractionDigits="2" value="${orderRecord.amount}"/></td>
             </tr>
 
             <tr class="lightBlue"><td colspan="3" style="padding: 0 20px"><hr></td></tr>

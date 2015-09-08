@@ -157,7 +157,7 @@
             <tr>
                 <td><fmt:message key='subtotal'/>:</td>
                 <td class="checkoutPriceColumn">
-                    &euro; ${cart.subtotal}</td>
+                    &euro; <fmt:formatNumber type="number" maxFractionDigits="2" value="${cart.subtotal}"/></td>
             </tr>
             <tr>
                 <td><fmt:message key='delivery surcharge'/></td>
@@ -167,7 +167,7 @@
             <tr>
                 <td class="total"><fmt:message key='total'/></td>
                 <td class="total checkoutPriceColumn">
-                    &euro; ${cart.total}</td>
+                    &euro; <fmt:formatNumber type="number" maxFractionDigits="2" value="${cart.total}"/></td>
             </tr>
         </table>
     </div>
