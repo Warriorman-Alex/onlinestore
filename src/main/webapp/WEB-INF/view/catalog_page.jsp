@@ -1,3 +1,8 @@
+<%-- Set session-scoped variable to track the view user is coming from.
+     This is used by the language mechanism in the Controller so that
+     users view the same page when switching between English and Russian. --%>
+<c:set var='view' value='/catalog_page' scope='session' />
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="categoryLeftColumn">
@@ -7,14 +12,14 @@
             <c:when test="${category.name == selectedCategory.name}">
                 <div class="categoryButton" id="selectedCategory">
                     <span class="categoryText">
-                        ${category.name}
+                        <fmt:message key='${category.name}'/>
                     </span>
                 </div>
             </c:when>
             <c:otherwise>
                 <a href="<c:url value='catalog?${category.id}'/>" class="categoryButton">
                     <div class="categoryText">
-                        ${category.name}
+                        <fmt:message key='${category.name}'/>
                     </div>
                 </a>
             </c:otherwise>
@@ -25,7 +30,7 @@
 
 <div id="categoryRightColumn">
     <p id="categoryTitle">
-        <span style="background-color: #f5eabe; padding: 7px;">${selectedCategory.name}</span>
+        <span style="background-color: #f5eabe; padding: 7px;"><fmt:message key='${selectedCategory.name}'/></span>
     </p>
 
     <table id="productTable">
@@ -39,7 +44,7 @@
                 <td>
                     ${product.name}
                     <br>
-                    <span class="smallText">${product.description}</span>
+                    <span class="smallText"><fmt:message key='${product.description}'/></span>
                 </td>
                 <td>
                     &euro; ${product.price} 
@@ -51,7 +56,7 @@
                                value="${product.id}">
                         <input type="submit"
                                name="submit"
-                               value="add to cart">
+                               value="<fmt:message key='add to cart'/>">
                     </form>
                 </td>
             </tr>

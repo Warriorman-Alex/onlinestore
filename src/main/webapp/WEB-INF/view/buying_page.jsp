@@ -2,27 +2,27 @@
 <div id="singleColumn">
 
     <p id="confirmationText">
-        <strong>Your order has been successfully processed and will be delivered within 24 hours.</strong>
+        <strong><fmt:message key='confirmationTextProcessed'/></strong>
         <br><br>
-        Please keep a note of your confirmation number:
+        <fmt:message key='confirmationTextConfirmation'/>
         <strong>${orderRecord.confirmationNumber}</strong>
         <br>
-        If you have a query concerning your order, feel free to <a href="#">contact us</a>.
+        <fmt:message key='confirmationTextConcerning'/> <a href="#"><fmt:message key='contact'/></a>.
         <br><br>
-        Thank you for shopping at the Online Store!
+        <fmt:message key='Thank'/>
     </p>
 
     <div class="summaryColumn" >
 
         <table id="orderSummaryTable" class="detailsTable">
             <tr class="header">
-                <th colspan="3">order summary</th>
+                <th colspan="3"><fmt:message key='orderSummary'/></th>
             </tr>
 
             <tr class="tableHeading">
-                <td>product</td>
-                <td>quantity</td>
-                <td>price</td>
+                <td><fmt:message key='product'/></td>
+                <td><fmt:message key='quantity'/></td>
+                <td><fmt:message key='price'/></td>
             </tr>
 
             <c:forEach var="orderedProduct" items="${orderedProducts}" varStatus="iter">
@@ -42,19 +42,19 @@
             <tr class="lightBlue"><td colspan="3" style="padding: 0 20px"><hr></td></tr>
 
             <tr class="lightBlue">
-                <td colspan="2" id="deliverySurchargeCellLeft"><strong>delivery surcharge:</strong></td>
+                <td colspan="2" id="deliverySurchargeCellLeft"><strong><fmt:message key='delivery surcharge'/></strong></td>
                 <td id="deliverySurchargeCellRight">&euro; ${initParam.deliverySurcharge}</td>
             </tr>
 
             <tr class="lightBlue">
-                <td colspan="2" id="totalCellLeft"><strong>total:</strong></td>
+                <td colspan="2" id="totalCellLeft"><strong><fmt:message key='total'/></strong></td>
                 <td id="totalCellRight">&euro; ${orderRecord.amount}</td>
             </tr>
 
             <tr class="lightBlue"><td colspan="3" style="padding: 0 20px"><hr></td></tr>
 
             <tr class="lightBlue">
-                <td colspan="3" id="dateProcessedRow"><strong>date processed:</strong>
+                <td colspan="3" id="dateProcessedRow"><strong><fmt:message key='date processed'/></strong>
                     ${orderRecord.dateCreated}
                 </td>
             </tr>
@@ -66,7 +66,7 @@
 
         <table id="deliveryAddressTable" class="detailsTable">
             <tr class="header">
-                <th colspan="3">delivery address</th>
+                <th colspan="3"><fmt:message key='delivery address'/></th>
             </tr>
 
             <tr>
@@ -75,12 +75,12 @@
                     <br>
                     ${customer.address}
                     <br>
-                    Prague ${customer.cityRegion}
+                    <fmt:message key='delivery'/> ${customer.cityRegion}
                     <br>
                     <hr>
-                    <strong>email:</strong> ${customer.email}
+                    <strong><fmt:message key='fieldEmail'/></strong> ${customer.email}
                     <br>
-                    <strong>phone:</strong> ${customer.phone}
+                    <strong><fmt:message key='fieldPhone'/></strong> ${customer.phone}
                 </td>
             </tr>
         </table>

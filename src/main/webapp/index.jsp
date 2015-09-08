@@ -1,17 +1,18 @@
-
+<%-- Set session-scoped variable to track the view user is coming from.
+     This is used by the language mechanism in the Controller so that
+     users view the same page when switching between English and Russian. --%>
+<c:set var='view' value='/index' scope='session' />
 
 <div id="indexLeftColumn">
     <div id="welcomeText">
         <p>
-            <i><b>Welcome to the online store!</b></i><br/><br/>
-            Shop in our store, and you are guaranteed 
-            to be happy with the result. 
-            Every client we offer individual approach, 
-            prompt delivery and reasonable prices and 
-            deliver a lot of positive emotions. 
-            We love and respect our clients and their 
-            work trying to satisfy all your desires. 
-            Come, choose, make a order!
+            <i><b>                                      
+                    <fmt:message key='greeting'/>
+                </b>
+            </i><br/><br/>
+        </p>
+        <p>
+            <fmt:message key='introText'/>
         </p>        
     </div>
 </div>
@@ -19,13 +20,13 @@
 <div id="indexRightColumn">
     <c:forEach var="category" items="${catalog}">
         <div class="categoryBox">
-            
+
             <a href="<c:url value='catalog?${category.id}'/>">
-                
-                <span class="categoryLabelText">${category.name}</span>
+
+                <span class="categoryLabelText"><fmt:message key='${category.name}'/></span>
 
                 <img src="${initParam.catalogImagePath}${category.name}.jpg"
-                     alt="${category.name}">
+                     alt="<fmt:message key='${category.name}'/>" class="categoryImage">
             </a>
         </div> 
     </c:forEach>
