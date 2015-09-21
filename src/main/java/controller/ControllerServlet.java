@@ -67,19 +67,19 @@ public class ControllerServlet extends HttpServlet {
                 // get categoryId from request
                 String categoryId = request.getQueryString();
 
-                if (categoryId != null) {
-                    // get selected category
-                    selectedCategory = categoryFacade.find(Short.parseShort(categoryId));
-
-                    // place selected category in request scope
-                    session.setAttribute("selectedCategory", selectedCategory);
-
-                    // get all products for selected category
-                    categoryProducts = selectedCategory.getProductCollection();
-
-                    // place category products in request scope
-                    session.setAttribute("categoryProducts", categoryProducts);
-                }
+//                if (categoryId != null) {
+//                    // get selected category
+//                    selectedCategory = categoryFacade.find(Short.parseShort(categoryId));
+//
+//                    // place selected category in request scope
+//                    session.setAttribute("selectedCategory", selectedCategory);
+//
+//                    // get all products for selected category
+//                    categoryProducts = selectedCategory.getProductCollection();
+//
+//                    // place category products in request scope
+//                    session.setAttribute("categoryProducts", categoryProducts);
+//                }
                 userPath = "/catalog_page";
                 break;
             }
