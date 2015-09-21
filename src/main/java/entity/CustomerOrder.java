@@ -24,8 +24,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+
 
 /**
  *
@@ -33,7 +32,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "customer_order")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "CustomerOrder.findAll", query = "SELECT c FROM CustomerOrder c"),
     @NamedQuery(name = "CustomerOrder.findById", query = "SELECT c FROM CustomerOrder c WHERE c.id = :id"),
@@ -110,8 +108,7 @@ public class CustomerOrder implements Serializable {
     public void setConfirmationNumber(int confirmationNumber) {
         this.confirmationNumber = confirmationNumber;
     }
-
-    @XmlTransient
+    
     public Collection<OrderedProduct> getOrderedProductCollection() {
         return orderedProductCollection;
     }
