@@ -41,7 +41,7 @@ public class Category implements Serializable {
     @Basic(optional = false)    
     @Column(name = "name")
     private String name;
-    @OneToMany(fetch = FetchType.LAZY ,cascade = CascadeType.ALL, mappedBy = "categoryId")
+    @OneToMany(fetch = FetchType.EAGER ,cascade = CascadeType.ALL, mappedBy = "categoryId")
     private Collection<Product> productCollection;
 
     public Category() {
