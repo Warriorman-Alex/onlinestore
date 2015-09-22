@@ -29,7 +29,7 @@ import session.OrderManager;
                            "/admin/orderRecord",
                            "/admin/logout"})
 @ServletSecurity( 
-        @HttpConstraint(transportGuarantee = TransportGuarantee.CONFIDENTIAL,
+        @HttpConstraint(
                 rolesAllowed = {"onlineStoreAdmin"}) )
 public class AdminServlet extends HttpServlet{
     

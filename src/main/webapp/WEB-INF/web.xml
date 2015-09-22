@@ -62,7 +62,7 @@
         <location>/WEB-INF/jspf/error/500.jspf</location>
     </error-page>
     
-    <security-constraint>
+<!--    <security-constraint>
         <display-name>Constraint1</display-name>
         <web-resource-collection>
             <web-resource-name>Checkout</web-resource-name>
@@ -74,7 +74,7 @@
             <description/>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
-    </security-constraint>
+    </security-constraint>-->
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>
