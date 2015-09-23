@@ -37,7 +37,7 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Short id;
+    private Short id;    
     @Basic(optional = false)    
     @Column(name = "name")
     private String name;

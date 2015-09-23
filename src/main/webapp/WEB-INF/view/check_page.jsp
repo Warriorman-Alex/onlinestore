@@ -48,7 +48,7 @@
                 
                 <tr>
                     <td colspan="2" style="text-align:left">
-                        <span class="error smallText" style="color:#CC0000"><fmt:message key='error\ smallText'/>
+                        <span class="error smallText" style="color:#CC0000"><fmt:message key='error smallText'/>
 
                             <c:if test="${!empty nameError}">
                                 <br><span class="indent"><strong><fmt:message key='nameError'/></strong> (e.g., Alex Trofymenko)</span>

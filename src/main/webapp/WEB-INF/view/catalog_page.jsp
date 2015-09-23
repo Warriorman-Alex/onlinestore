@@ -17,7 +17,7 @@
                 </div>
             </c:when>
             <c:otherwise>
-                <a href="<c:url value='catalog?${category.id}'/>" class="categoryButton">
+                <a href="<c:url value='catalog?${category.name}'/>" class="categoryButton">
                     <div class="categoryText">
                         <fmt:message key='${category.name}'/>
                     </div>

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.log4j.Logger;
 import session.CustomerFacade;
 import session.CustomerOrderFacade;
 import session.OrderManager;
@@ -32,6 +33,7 @@ import session.OrderManager;
         @HttpConstraint(
                 rolesAllowed = {"onlineStoreAdmin"}) )
 public class AdminServlet extends HttpServlet{
+    private static final Logger logger = Logger.getLogger(AdminServlet.class);
     
     @EJB
     private OrderManager orderManager;
@@ -51,16 +53,20 @@ public class AdminServlet extends HttpServlet{
 
         HttpSession session = request.getSession(true);
         userPath = request.getServletPath();
+        logger.debug(session);
+        logger.debug(userPath);
 
         // if viewCustomers is requested
         if (userPath.equals("/admin/viewCustomers")) {
             customerList = customerFacade.findAll();
+            logger.debug(customerList);
             request.setAttribute("customerList", customerList);
         }
 
         // if viewOrders is requested
         if (userPath.equals("/admin/viewOrders")) {
             orderList = customerOrderFacade.findAll();
+            logger.debug(orderList);
             request.setAttribute("orderList", orderList);
         }
 
@@ -69,12 +75,17 @@ public class AdminServlet extends HttpServlet{
 
             // get customer id from request
             String customerId = request.getQueryString();
+            logger.debug(customerId);
             
             // get customer details
             customer = customerFacade.find(Integer.parseInt(customerId));
+            logger.debug(customer);
+            
             request.setAttribute("customerRecord", customer);            
             // get customer order details
-            order = customerOrderFacade.findByCustomer(customer);            
+            order = customerOrderFacade.findByCustomer(customer);  
+            logger.debug(order);
+            
             request.setAttribute("order", order);
         }
 
@@ -83,9 +94,11 @@ public class AdminServlet extends HttpServlet{
 
             // get customer id from request
             String orderId = request.getQueryString();
+            logger.debug(orderId);
 
             // get order details
             Map orderMap = orderManager.getOrderDetails(Integer.parseInt(orderId));
+            logger.debug(orderMap);
 
             // place order details in request scope
             request.setAttribute("customer", orderMap.get("customer"));
@@ -107,7 +120,7 @@ public class AdminServlet extends HttpServlet{
         try {
             request.getRequestDispatcher(userPath).forward(request, response);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.error("Exception", ex);
         }
     }
     

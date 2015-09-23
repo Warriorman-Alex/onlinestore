@@ -30,10 +30,11 @@
                 onclick="document.location.href='customerRecord?${customer.id}'">
 
               <%-- Below anchor tags are provided in case JavaScript is disabled --%>
-                <td><a href="customerRecord?${customer.id}" class="noDecoration">${customer.id}</a></td>
-                <td><a href="customerRecord?${customer.id}" class="noDecoration">${customer.name}</a></td>
-                <td><a href="customerRecord?${customer.id}" class="noDecoration">${customer.email}</a></td>
-                <td><a href="customerRecord?${customer.id}" class="noDecoration">${customer.phone}</a></td>
+              
+              <td><a href="customerRecord?${customer.id}" class="noDecoration"><c:out value="${customer.id}"/></a></td>
+                <td><a href="customerRecord?${customer.id}" class="noDecoration"><c:out value="${customer.name}"/></a></td>
+                <td><a href="customerRecord?${customer.id}" class="noDecoration"><c:out value="${customer.email}"/></a></td>
+                <td><a href="customerRecord?${customer.id}" class="noDecoration"><c:out value="${customer.phone}"/></a></td>
             </tr>
 
         </c:forEach>
@@ -174,7 +175,7 @@
 
                         <tr>
                             <td>
-                                <fmt:message key="${products[iter.index].name}"/>
+                                ${products[iter.index].name}
                             </td>
                             <td>
                                 ${orderedProduct.quantity}

@@ -2,9 +2,11 @@
 package validate;
 
 import javax.servlet.http.HttpServletRequest;
+import org.apache.log4j.Logger;
 
 
 public class Validator {
+    private static final Logger logger = Logger.getLogger(Validator.class);
     // ensures that quantity input is number between 0 and 99
     // applies to quantity fields in cart page
     public boolean validateQuantity (String productId, String quantity) {
@@ -18,9 +20,8 @@ public class Validator {
             try {
 
                 i = Integer.parseInt(quantity);
-            } catch (NumberFormatException nfe) {
-
-                System.out.println("User did not enter a number in the quantity field");
+            } catch (NumberFormatException nfe) {                
+                logger.error("User did not enter a number in the quantity field", nfe);
             }
 
             if (i < 0 || i > 99) {

@@ -23,6 +23,10 @@ public class CategoryFacade extends AbstractFacade<Category> {
     protected EntityManager getEntityManager() {
         return em;
     }
+    
+    public Short findIdByName(String name){
+        return (Short)em.createQuery("SELECT c.id FROM Category c WHERE c.name = :name").setParameter("name", name).getSingleResult();
+    }
 
     public CategoryFacade() {
         super(Category.class);

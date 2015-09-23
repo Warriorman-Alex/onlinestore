@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.log4j.Logger;
 import session.CategoryFacade;
 import session.OrderManager;
 import session.ProductFacade;
@@ -30,6 +31,7 @@ import validate.Validator;
             "/purchase",
             "/chooseLanguage"})
 public class ControllerServlet extends HttpServlet {
+    private static final Logger logger = Logger.getLogger(ControllerServlet.class);
 
     private String surcharge;
 
@@ -42,41 +44,52 @@ public class ControllerServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-
-        super.init(servletConfig);
-
+        logger.info("start initialize servlet");
+        
+        super.init(servletConfig);       
+        
         // initialize servlet with configuration information
         surcharge = servletConfig.getServletContext().getInitParameter("deliverySurcharge");
-
+        logger.debug(surcharge);     
+        
         // store category list in servlet context
         getServletContext().setAttribute("catalog", categoryFacade.findAll());
+        
+        logger.info("end initialize servlet");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String userPath = request.getServletPath();
+        String userPath = request.getServletPath();        
         HttpSession session = request.getSession();
         Category selectedCategory;
         Collection<Product> categoryProducts;
+        
+        logger.debug(userPath);
+        logger.debug(session);
 
         // if category page is requested
         switch (userPath) {
             case ("/catalog"): {
                 // get categoryId from request
                 String categoryId = request.getQueryString();
-
+                logger.debug(categoryId);
+                
                 if (categoryId != null) {
-                    // get selected category
-                    selectedCategory = categoryFacade.find(Short.parseShort(categoryId));
-
+                    // get selected category                   
+                    
+                    selectedCategory = categoryFacade.find(categoryFacade.findIdByName(categoryId));
+                    logger.debug(selectedCategory);
+                    
                     // place selected category in request scope
                     session.setAttribute("selectedCategory", selectedCategory);
 
                     // get all products for selected category
                     categoryProducts = selectedCategory.getProductCollection();
-
+                    logger.debug(categoryProducts);
+                    
                     // place category products in request scope
                     session.setAttribute("categoryProducts", categoryProducts);
                 }
@@ -85,10 +98,13 @@ public class ControllerServlet extends HttpServlet {
             }
             case ("/viewCart"): {
                 String clear = request.getParameter("clear");
-
+                logger.debug(clear);
+                
                 if ((clear != null) && clear.equals("true")) {
 
                     ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+                    logger.debug(cart);
+                    
                     cart.clear();
                 }
 
@@ -97,9 +113,11 @@ public class ControllerServlet extends HttpServlet {
             }
             case ("/checkout"): {
                 ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-
+                logger.debug(cart);
+                
                 // calculate total
                 cart.calculateTotal(surcharge);
+                
                 // forward to checkout page and switch to a secure channel
                 userPath = "/check_page";
                 break;
@@ -107,27 +125,30 @@ public class ControllerServlet extends HttpServlet {
             case ("/chooseLanguage"): {
                 // get language choice
                 String language = request.getParameter("language");
-
+                logger.debug(language);
+                
                 // place in request scope
                 request.setAttribute("language", language);
 
                 String userView = (String) session.getAttribute("view");
-
+                logger.debug(userView);
+                
                 if ((userView != null)
                         && (!userView.equals("/index"))) {     // index.jsp exists outside 'view' folder
                     // so must be forwarded separately
                     userPath = userView;
+                    logger.debug(userPath);
+                    
                 } else {
 
                     // if previous view is index or cannot be determined, send user to welcome page
                     try {
                         request.getRequestDispatcher("/index.jsp").forward(request, response);
                     } catch (Exception ex) {
-                        ex.printStackTrace();
+                        logger.error("Exception", ex);                        
                     }
                     return;
                 }
-
             }
         }
 
@@ -137,11 +158,12 @@ public class ControllerServlet extends HttpServlet {
         sb.append(userPath);
         sb.append(".jsp");
         String url = sb.toString();
-
+        logger.debug(url);
+                
         try {
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.error("Exception", ex);
         }
     }
 
@@ -154,7 +176,14 @@ public class ControllerServlet extends HttpServlet {
         String userPath = request.getServletPath();
         HttpSession session = request.getSession();
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        
+        logger.debug(userPath);
+        logger.debug(session);
+        logger.debug(cart);
+        
+        logger.info("Start Create Validator");
         Validator validator = new Validator();
+        logger.info("End Create Validator");
 
         // if addToCart action is called
         switch (userPath) {
@@ -162,17 +191,19 @@ public class ControllerServlet extends HttpServlet {
                 // if user is adding item to cart for first time
                 // create cart object and attach it to user session
                 if (cart == null) {
-
                     cart = new ShoppingCart();
                     session.setAttribute("cart", cart);
                 }
 
                 // get user input from request
                 String productId = request.getParameter("productId");
-
+                logger.debug(productId);
+                
                 if (!productId.isEmpty()) {
 
                     Product product = productFacade.find(Integer.parseInt(productId));
+                    logger.debug(product);
+                    
                     cart.addItem(product);
                 }
                 userPath = "/catalog_page";
@@ -182,8 +213,12 @@ public class ControllerServlet extends HttpServlet {
                 // get input from request
                 String productId = request.getParameter("productId");
                 String quantity = request.getParameter("quantity");
-
+                logger.debug(productId);
+                logger.debug(quantity);
+                
                 Product product = productFacade.find(Integer.parseInt(productId));
+                logger.debug(product);
+                
                 cart.update(product, quantity);
 
                 userPath = "/cart_page";
@@ -199,11 +234,19 @@ public class ControllerServlet extends HttpServlet {
                     String address = request.getParameter("address");
                     String cityRegion = request.getParameter("cityRegion");
                     String ccNumber = request.getParameter("creditcard");
+                    
+                    logger.debug(name);
+                    logger.debug(email);
+                    logger.debug(phone);
+                    logger.debug(address);
+                    logger.debug(cityRegion);
+                    logger.debug(ccNumber);
 
                     // validate user data
                     boolean validationErrorFlag = false;
                     validationErrorFlag = validator.validateForm(name, email, phone, address, cityRegion, ccNumber, request);
-
+                    logger.debug(validationErrorFlag);
+                    
                     // if validation error found, return user to checkout
                     if (validationErrorFlag == true) {
                         request.setAttribute("validationErrorFlag", validationErrorFlag);
@@ -213,15 +256,19 @@ public class ControllerServlet extends HttpServlet {
                     } else {
 
                         int orderId = orderManager.placeOrder(name, email, phone, address, cityRegion, ccNumber, cart);
-
+                        logger.debug(orderId);
+                        
                         if (orderId != 0) {
                             // in case language was set using toggle, get language choice before destroying session
                             Locale locale = (Locale) session.getAttribute("javax.servlet.jsp.jstl.fmt.locale.session");
+                            logger.debug(locale);
+                            
                             String language = "";
 
                             if (locale != null) {
 
                                 language = (String) locale.getLanguage();
+                                logger.debug(language);                               
                             }
 
                             // dissociate shopping cart from session
@@ -237,7 +284,8 @@ public class ControllerServlet extends HttpServlet {
 
                             // get order details
                             Map orderMap = orderManager.getOrderDetails(orderId);
-
+                            logger.debug(orderMap);
+                            
                             // place order details in request scope
                             request.setAttribute("customer", orderMap.get("customer"));
                             request.setAttribute("products", orderMap.get("products"));
@@ -256,8 +304,6 @@ public class ControllerServlet extends HttpServlet {
                     }
 
                 }
-//                userPath = "/buying_page";
-//                break;
             }
         }
 
@@ -267,11 +313,12 @@ public class ControllerServlet extends HttpServlet {
         sb.append(userPath);
         sb.append(".jsp");
         String url = sb.toString();
-
+        logger.debug(url);
+        
         try {
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.error("Exception", ex);            
         }
     }
 }

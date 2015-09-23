@@ -21,7 +21,7 @@
     <c:forEach var="category" items="${catalog}">
         <div class="categoryBox">
 
-            <a href="<c:url value='catalog?${category.id}'/>">
+            <a href="<c:url value='catalog?${category.name}'/>">
 
                 <span class="categoryLabelText"><fmt:message key='${category.name}'/></span>
 
