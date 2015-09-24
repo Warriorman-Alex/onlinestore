@@ -171,7 +171,7 @@ public class ControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("Cp1251");
 
         String userPath = request.getServletPath();
         HttpSession session = request.getSession();
