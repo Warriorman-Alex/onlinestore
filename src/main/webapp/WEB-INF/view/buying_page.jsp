@@ -42,8 +42,8 @@
             <tr class="lightBlue"><td colspan="3" style="padding: 0 20px"><hr></td></tr>
 
             <tr class="lightBlue">
-                <td colspan="2" id="deliverySurchargeCellLeft"><strong><fmt:message key='delivery surcharge'/></strong></td>
-                <td id="deliverySurchargeCellRight">&euro; ${initParam.deliverySurcharge}</td>
+                <td colspan="2" id="deliverySurchargeCellLeft"><strong><fmt:message key='deliveryBP'/></strong></td>
+                <td id="deliverySurchargeCellRight">&euro; ${deliveryCost}</td>
             </tr>
 
             <tr class="lightBlue">

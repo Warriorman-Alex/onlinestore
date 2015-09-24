@@ -34,6 +34,7 @@ public class ControllerServlet extends HttpServlet {
     private static final Logger logger = Logger.getLogger(ControllerServlet.class);
 
     private String surcharge;
+    private String surchargePremium;
 
     @EJB
     private CategoryFacade categoryFacade;
@@ -50,8 +51,9 @@ public class ControllerServlet extends HttpServlet {
         
         // initialize servlet with configuration information
         surcharge = servletConfig.getServletContext().getInitParameter("deliverySurcharge");
+        surchargePremium = servletConfig.getServletContext().getInitParameter("deliverySurchargePremium");
         logger.debug(surcharge);     
-        
+        logger.debug(surchargePremium);
         // store category list in servlet context
         getServletContext().setAttribute("catalog", categoryFacade.findAll());
         
@@ -117,6 +119,7 @@ public class ControllerServlet extends HttpServlet {
                 
                 // calculate total
                 cart.calculateTotal(surcharge);
+                cart.calculateTotalPremium(surchargePremium);
                 
                 // forward to checkout page and switch to a secure channel
                 userPath = "/check_page";
@@ -240,8 +243,8 @@ public class ControllerServlet extends HttpServlet {
                     logger.debug(phone);
                     logger.debug(address);
                     logger.debug(cityRegion);
-                    logger.debug(ccNumber);
-
+                    logger.debug(ccNumber);                  
+                    
                     // validate user data
                     boolean validationErrorFlag = false;
                     validationErrorFlag = validator.validateForm(name, email, phone, address, cityRegion, ccNumber, request);
@@ -291,6 +294,12 @@ public class ControllerServlet extends HttpServlet {
                             request.setAttribute("products", orderMap.get("products"));
                             request.setAttribute("orderRecord", orderMap.get("orderRecord"));
                             request.setAttribute("orderedProducts", orderMap.get("orderedProducts"));
+                            
+                            if(cityRegion.equals("Regular shipping")){
+                                request.setAttribute("deliveryCost", surcharge);
+                            }else{
+                                request.setAttribute("deliveryCost", surchargePremium);
+                            }
 
                             userPath = "/buying_page";
                             break;

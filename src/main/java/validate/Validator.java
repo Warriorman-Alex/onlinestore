@@ -79,9 +79,7 @@ public class Validator {
             addressError = true;
             request.setAttribute("addressError", addressError);
         }
-        if (cityRegion == null
-                || cityRegion.equals("")
-                || cityRegion.length() > 2) {
+        if (cityRegion == null) {
             errorFlag = true;
             cityRegionError = true;
             request.setAttribute("cityRegionError", cityRegionError);

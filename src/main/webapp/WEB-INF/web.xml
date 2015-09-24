@@ -13,9 +13,15 @@
     </context-param>
     
     <context-param>
-        <description>The delivery surcharge applied to all orders</description>
+        <description>The delivery surcharge applied to Regular delivery</description>
         <param-name>deliverySurcharge</param-name>
         <param-value>3.00</param-value>
+    </context-param>
+    
+    <context-param>
+        <description>The delivery surcharge applied to Premium delivery</description>
+        <param-name>deliverySurchargePremium</param-name>
+        <param-value>10.00</param-value>
     </context-param>
     
     <context-param>

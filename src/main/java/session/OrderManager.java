@@ -27,7 +27,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class OrderManager {
-    
+
     @PersistenceContext(unitName = "OnlineStorePU")
     private EntityManager em;
     @Resource
@@ -38,22 +38,22 @@ public class OrderManager {
     private CustomerOrderFacade customerOrderFacade;
     @EJB
     private OrderedProductFacade orderedProductFacade;
-    
+
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public int placeOrder(String name, String email, String phone, String address, String cityRegion, String ccNumber, ShoppingCart cart) {
-        try{
-        Customer customer = addCustomer(name, email, phone, address, cityRegion, ccNumber);      
-        CustomerOrder order = addOrder(customer, cart);      
-        addOrderedItems(order, cart);        
-        return order.getId();
-        }catch(Exception e){
+        try {
+            Customer customer = addCustomer(name, email, phone, address, cityRegion, ccNumber);
+            CustomerOrder order = addOrder(customer, cart);
+            addOrderedItems(order, cart);
+            return order.getId();
+        } catch (Exception e) {
             context.setRollbackOnly();
             return 0;
         }
     }
 
     private Customer addCustomer(String name, String email, String phone, String address, String cityRegion, String ccNumber) {
-        
+
         Customer customer = new Customer();
         customer.setName(name);
         customer.setEmail(email);
@@ -61,24 +61,29 @@ public class OrderManager {
         customer.setAddress(address);
         customer.setCityRegion(cityRegion);
         customer.setCcNumber(ccNumber);
-        
+
         em.persist(customer);
-        
+
         return customer;
     }
 
     private CustomerOrder addOrder(Customer customer, ShoppingCart cart) {
         // set up customer order
-        
-        CustomerOrder order = new CustomerOrder();        
+
+        CustomerOrder order = new CustomerOrder();
         order.setCustomerId(customer);
-        order.setAmount(BigDecimal.valueOf(cart.getTotal()));
+        
+        if (customer.getCityRegion().equals("Regular shipping")) {
+            order.setAmount(BigDecimal.valueOf(cart.getTotal()));
+        }else{
+            order.setAmount(BigDecimal.valueOf(cart.getTotalPremium()));
+        }
 
         // create confirmation number
         Random random = new Random();
         int i = random.nextInt(999999999);
         order.setConfirmationNumber(i);
-        
+
         em.persist(order);
         return order;
     }
@@ -103,17 +108,17 @@ public class OrderManager {
             // set quantity
             orderedItem.setQuantity(scItem.getQuantity());
             em.persist(orderedItem);
-            
+
         }
     }
-    
+
     public Map getOrderDetails(int orderId) {
 
         Map orderMap = new HashMap();
 
         // get order
         CustomerOrder order = customerOrderFacade.find(orderId);
-
+        
         // get customer
         Customer customer = order.getCustomerId();
 
@@ -133,7 +138,7 @@ public class OrderManager {
         orderMap.put("orderRecord", order);
         orderMap.put("customer", customer);
         orderMap.put("orderedProducts", orderedProducts);
-        orderMap.put("products", products);
+        orderMap.put("products", products);        
 
         return orderMap;
     }

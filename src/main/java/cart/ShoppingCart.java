@@ -10,6 +10,7 @@ public class ShoppingCart {
     List<ShoppingCartItem> items;
     int numberOfItems;
     double total;
+    double totalPremium;
 
     public ShoppingCart() {
         items = new ArrayList<ShoppingCartItem>();
@@ -111,10 +112,27 @@ public class ShoppingCart {
 
         total = amount;
     }
+    public synchronized void calculateTotalPremium(String surcharge) {
+
+        double amount = 0;
+
+        // cast surcharge as double
+        double s = Double.parseDouble(surcharge);
+
+        amount = this.getSubtotal();
+        amount += s;
+
+        totalPremium = amount;
+    }
     public synchronized double getTotal() {
 
         return total;
     }
+
+    public double getTotalPremium() {
+        return totalPremium;
+    }
+    
     
     public synchronized void clear() {
         items.clear();

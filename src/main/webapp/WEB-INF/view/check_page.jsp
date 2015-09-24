@@ -45,29 +45,29 @@
     <form action="<c:url value='purchase'/>" method="post">
         <table id="checkoutTable">
             <c:if test="${!empty validationErrorFlag}">
-                
+
                 <tr>
                     <td colspan="2" style="text-align:left">
                         <span class="error smallText" style="color:#CC0000"><fmt:message key='error smallText'/>
 
                             <c:if test="${!empty nameError}">
                                 <br><span class="indent"><strong><fmt:message key='nameError'/></strong> (e.g., Alex Trofymenko)</span>
-                            </c:if>
-                            <c:if test="${!empty emailError}">
-                                    <br><span class="indent"><strong><fmt:message key='emailError'/></strong> (e.g., a.trofym@gmail.com)</span>
-                            </c:if>
-                            <c:if test="${!empty phoneError}">
-                                        <br><span class="indent"><strong><fmt:message key='phoneError'/></strong> (e.g., 222333444)</span>
-                            </c:if>
-                            <c:if test="${!empty addressError}">
-                                            <br><span class="indent"><strong><fmt:message key='addressError'/></strong> (e.g., Borisoglebskaya 1)</span>
-                            </c:if>
-                            <c:if test="${!empty cityRegionError}">
-                                                <br><span class="indent"><strong><fmt:message key='cityRegionError'/></strong> (e.g., 1)</span>
-                            </c:if>
-                            <c:if test="${!empty ccNumberError}">
-                                                    <br><span class="indent"><strong><fmt:message key='ccNumberError'/></strong> (e.g., 1111-2222-3333-4444)</span>
-                            </c:if>
+                                    </c:if>
+                                    <c:if test="${!empty emailError}">
+                                <br><span class="indent"><strong><fmt:message key='emailError'/></strong> (e.g., a.trofym@gmail.com)</span>
+                                    </c:if>
+                                    <c:if test="${!empty phoneError}">
+                                <br><span class="indent"><strong><fmt:message key='phoneError'/></strong> (e.g., 222333444)</span>
+                                    </c:if>
+                                    <c:if test="${!empty addressError}">
+                                <br><span class="indent"><strong><fmt:message key='addressError'/></strong> (e.g., Borisoglebskaya 1)</span>
+                                    </c:if>
+                                    <c:if test="${!empty cityRegionError}">
+                                <br><span class="indent"><strong><fmt:message key='cityRegionError'/></strong> (e.g., 1)</span>
+                                    </c:if>
+                                    <c:if test="${!empty ccNumberError}">
+                                <br><span class="indent"><strong><fmt:message key='ccNumberError'/></strong> (e.g., 1111-2222-3333-4444)</span>
+                                    </c:if>
 
                         </span>
                     </td>
@@ -119,10 +119,8 @@
                     <br>
                     <fmt:message key='delivery'/>
                     <select name="cityRegion">
-                        <c:forEach begin="1" end="10" var="regionNumber">
-                            <option value="${regionNumber}"
-                                    <c:if test="${param.cityRegion eq regionNumber}">selected</c:if>>${regionNumber}</option>
-                        </c:forEach>
+                        <option value="Regular shipping"><fmt:message key='Regular shipping'/></option>
+                        <option value="Premium service"><fmt:message key='Premium service'/></option>                        
                     </select>
                 </td>
             </tr>
@@ -168,6 +166,32 @@
                 <td class="total"><fmt:message key='total'/></td>
                 <td class="total checkoutPriceColumn">
                     &euro; <fmt:formatNumber type="number" maxFractionDigits="2" value="${cart.total}"/></td>
+            </tr>
+        </table>
+    </div>
+    <div id="infoBox">
+
+        <ul>
+            <li><fmt:message key='deliveryTextPremium'/></li>
+            <li>&euro; ${initParam.deliverySurchargePremium}
+                <fmt:message key='deliveryCostPremium'/></li>
+        </ul>
+
+        <table id="priceBox">
+            <tr>
+                <td><fmt:message key='subtotal'/>:</td>
+                <td class="checkoutPriceColumn">
+                    &euro; <fmt:formatNumber type="number" maxFractionDigits="2" value="${cart.subtotal}"/></td>
+            </tr>
+            <tr>
+                <td><fmt:message key='deliverySurchargePremium'/></td>
+                <td class="checkoutPriceColumn">
+                    &euro; ${initParam.deliverySurchargePremium}</td>
+            </tr>
+            <tr>
+                <td class="total"><fmt:message key='total'/></td>
+                <td class="total checkoutPriceColumn">
+                    &euro; <fmt:formatNumber type="number" maxFractionDigits="2" value="${cart.totalPremium}"/></td>
             </tr>
         </table>
     </div>
