@@ -18,7 +18,7 @@
                 phone: {
                     required: true,
                     number: true,
-                    minlength: 9
+                    minlength: 10
                 },
                 address: {
                     required: true
@@ -57,7 +57,7 @@
                                 <br><span class="indent"><strong><fmt:message key='emailError'/></strong> (e.g., a.trofym@gmail.com)</span>
                                     </c:if>
                                     <c:if test="${!empty phoneError}">
-                                <br><span class="indent"><strong><fmt:message key='phoneError'/></strong> (e.g., 222333444)</span>
+                                <br><span class="indent"><strong><fmt:message key='phoneError'/></strong> (e.g., 0503334444)</span>
                                     </c:if>
                                     <c:if test="${!empty addressError}">
                                 <br><span class="indent"><strong><fmt:message key='addressError'/></strong> (e.g., Borisoglebskaya 1)</span>

@@ -2092,3 +2092,1214 @@ Headers:
 2015-09-24 23:09:48 DEBUG ControllerServlet:55 - 3.00
 2015-09-24 23:09:48 DEBUG ControllerServlet:56 - 10.00
 2015-09-24 23:09:48 INFO  ControllerServlet:60 - end initialize servlet
+2015-09-25 22:11:28 INFO  ControllerServlet:48 - start initialize servlet
+2015-09-25 22:11:28 DEBUG ControllerServlet:55 - 3.00
+2015-09-25 22:11:28 DEBUG ControllerServlet:56 - 10.00
+2015-09-25 22:11:30 INFO  ControllerServlet:60 - end initialize servlet
+2015-09-25 22:11:50 INFO  ControllerServlet:48 - start initialize servlet
+2015-09-25 22:11:50 DEBUG ControllerServlet:55 - 3.00
+2015-09-25 22:11:50 DEBUG ControllerServlet:56 - 10.00
+2015-09-25 22:11:50 INFO  ControllerServlet:60 - end initialize servlet
+2015-09-25 22:11:56 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: classic
+Parameters:
+	Name: classic	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=5eb3b6c922042e8197744834c028
+
+2015-09-25 22:11:56 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:11:56 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 22:11:56 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:11:56 DEBUG ControllerServlet:80 - classic
+2015-09-25 22:11:56 DEBUG ControllerServlet:86 - entity.Category[ id=1 ]
+2015-09-25 22:11:56 DEBUG ControllerServlet:93 - [entity.Product[ id=1 ], entity.Product[ id=2 ], entity.Product[ id=3 ], entity.Product[ id=4 ]]
+2015-09-25 22:11:56 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 22:11:59 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/addToCart
+method: POST
+QueryString: null
+Parameters:
+	Name: productId	Value: 1
+	Name: submit	Value: add to cart
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 30
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog;jsessionid=5eb3b6c922042e8197744834c028?classic
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=5eb3b6c922042e8197744834c028
+
+2015-09-25 22:11:59 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:11:59 DEBUG ControllerServlet:183 - /addToCart
+2015-09-25 22:11:59 DEBUG ControllerServlet:184 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:11:59 DEBUG ControllerServlet:185 - 
+2015-09-25 22:11:59 INFO  ControllerServlet:187 - Start Create Validator
+2015-09-25 22:11:59 INFO  ControllerServlet:189 - End Create Validator
+2015-09-25 22:11:59 DEBUG ControllerServlet:203 - 1
+2015-09-25 22:11:59 DEBUG ControllerServlet:208 - entity.Product[ id=1 ]
+2015-09-25 22:11:59 DEBUG ControllerServlet:325 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 22:12:01 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/checkout
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/addToCart
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=5eb3b6c922042e8197744834c028
+
+2015-09-25 22:12:01 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:12:01 DEBUG ControllerServlet:72 - /checkout
+2015-09-25 22:12:01 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:12:01 DEBUG ControllerServlet:118 - cart.ShoppingCart@18b9b865
+2015-09-25 22:12:01 DEBUG ControllerServlet:164 - /WEB-INF/view/check_page.jsp
+2015-09-25 22:12:06 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/purchase
+method: POST
+QueryString: null
+Parameters:
+	Name: name	Value: 
+	Name: email	Value: 
+	Name: phone	Value: 
+	Name: address	Value: 
+	Name: cityRegion	Value: Regular shipping
+	Name: creditcard	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 68
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/checkout
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=5eb3b6c922042e8197744834c028
+
+2015-09-25 22:12:06 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:12:06 DEBUG ControllerServlet:183 - /purchase
+2015-09-25 22:12:06 DEBUG ControllerServlet:184 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:12:06 DEBUG ControllerServlet:185 - cart.ShoppingCart@18b9b865
+2015-09-25 22:12:06 INFO  ControllerServlet:187 - Start Create Validator
+2015-09-25 22:12:06 INFO  ControllerServlet:189 - End Create Validator
+2015-09-25 22:12:06 DEBUG ControllerServlet:241 - 
+2015-09-25 22:12:06 DEBUG ControllerServlet:242 - 
+2015-09-25 22:12:06 DEBUG ControllerServlet:243 - 
+2015-09-25 22:12:06 DEBUG ControllerServlet:244 - 
+2015-09-25 22:12:06 DEBUG ControllerServlet:245 - Regular shipping
+2015-09-25 22:12:06 DEBUG ControllerServlet:246 - 
+2015-09-25 22:12:06 DEBUG ControllerServlet:251 - true
+2015-09-25 22:12:06 DEBUG ControllerServlet:325 - /WEB-INF/view/check_page.jsp
+2015-09-25 22:13:09 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/chooseLanguage
+method: GET
+QueryString: language=ru
+Parameters:
+	Name: language	Value: ru
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/purchase
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=5eb3b6c922042e8197744834c028
+
+2015-09-25 22:13:09 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:13:09 DEBUG ControllerServlet:72 - /chooseLanguage
+2015-09-25 22:13:09 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@a3b3f11
+2015-09-25 22:13:09 DEBUG ControllerServlet:131 - ru
+2015-09-25 22:13:09 DEBUG ControllerServlet:137 - /check_page
+2015-09-25 22:13:09 DEBUG ControllerServlet:143 - /check_page
+2015-09-25 22:13:09 DEBUG ControllerServlet:164 - /WEB-INF/view/check_page.jsp
+2015-09-25 23:45:44 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/purchase
+method: POST
+QueryString: null
+Parameters:
+	Name: name	Value: 
+	Name: email	Value: 
+	Name: phone	Value: 
+	Name: address	Value: 
+	Name: cityRegion	Value: Premium service
+	Name: creditcard	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 67
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/chooseLanguage?language=ru
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=5eb3b6c922042e8197744834c028
+
+2015-09-25 23:45:44 DEBUG SessionTimeoutFilter:29 - 
+2015-09-25 23:45:46 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: classic
+Parameters:
+	Name: classic	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/purchase
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:45:46 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:45:46 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:45:46 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:45:46 DEBUG ControllerServlet:80 - classic
+2015-09-25 23:45:46 DEBUG ControllerServlet:86 - entity.Category[ id=1 ]
+2015-09-25 23:45:46 DEBUG ControllerServlet:93 - [entity.Product[ id=1 ], entity.Product[ id=2 ], entity.Product[ id=3 ], entity.Product[ id=4 ]]
+2015-09-25 23:45:46 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:04 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: horror
+Parameters:
+	Name: horror	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?classic
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:04 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:04 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:04 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:04 DEBUG ControllerServlet:80 - horror
+2015-09-25 23:46:04 DEBUG ControllerServlet:86 - entity.Category[ id=2 ]
+2015-09-25 23:46:04 DEBUG ControllerServlet:93 - [entity.Product[ id=5 ], entity.Product[ id=6 ], entity.Product[ id=7 ], entity.Product[ id=8 ]]
+2015-09-25 23:46:04 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:11 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: fantasy
+Parameters:
+	Name: fantasy	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?horror
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:11 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:11 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:11 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:11 DEBUG ControllerServlet:80 - fantasy
+2015-09-25 23:46:11 DEBUG ControllerServlet:86 - entity.Category[ id=3 ]
+2015-09-25 23:46:11 DEBUG ControllerServlet:93 - [entity.Product[ id=9 ], entity.Product[ id=10 ], entity.Product[ id=11 ], entity.Product[ id=12 ]]
+2015-09-25 23:46:11 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:24 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: detective
+Parameters:
+	Name: detective	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?fantasy
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:24 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:24 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:24 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:24 DEBUG ControllerServlet:80 - detective
+2015-09-25 23:46:24 DEBUG ControllerServlet:86 - entity.Category[ id=4 ]
+2015-09-25 23:46:24 DEBUG ControllerServlet:93 - [entity.Product[ id=13 ], entity.Product[ id=14 ], entity.Product[ id=15 ]]
+2015-09-25 23:46:24 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:27 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: historical
+Parameters:
+	Name: historical	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?detective
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:27 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:27 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:27 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:27 DEBUG ControllerServlet:80 - historical
+2015-09-25 23:46:27 DEBUG ControllerServlet:86 - entity.Category[ id=5 ]
+2015-09-25 23:46:27 DEBUG ControllerServlet:93 - [entity.Product[ id=16 ], entity.Product[ id=17 ], entity.Product[ id=18 ], entity.Product[ id=19 ]]
+2015-09-25 23:46:27 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:29 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: psychology
+Parameters:
+	Name: psychology	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?historical
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:29 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:29 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:29 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:29 DEBUG ControllerServlet:80 - psychology
+2015-09-25 23:46:29 DEBUG ControllerServlet:86 - entity.Category[ id=6 ]
+2015-09-25 23:46:29 DEBUG ControllerServlet:93 - [entity.Product[ id=20 ], entity.Product[ id=21 ], entity.Product[ id=22 ], entity.Product[ id=23 ]]
+2015-09-25 23:46:29 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:31 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: business
+Parameters:
+	Name: business	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?psychology
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:31 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:31 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:31 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:31 DEBUG ControllerServlet:80 - business
+2015-09-25 23:46:31 DEBUG ControllerServlet:86 - entity.Category[ id=7 ]
+2015-09-25 23:46:31 DEBUG ControllerServlet:93 - [entity.Product[ id=24 ], entity.Product[ id=25 ], entity.Product[ id=26 ], entity.Product[ id=27 ]]
+2015-09-25 23:46:31 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:34 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: cooking
+Parameters:
+	Name: cooking	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?business
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:34 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:34 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:34 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:34 DEBUG ControllerServlet:80 - cooking
+2015-09-25 23:46:34 DEBUG ControllerServlet:86 - entity.Category[ id=8 ]
+2015-09-25 23:46:34 DEBUG ControllerServlet:93 - [entity.Product[ id=28 ], entity.Product[ id=29 ], entity.Product[ id=30 ], entity.Product[ id=31 ]]
+2015-09-25 23:46:34 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:39 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: computer
+Parameters:
+	Name: computer	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?cooking
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:39 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:39 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:39 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:39 DEBUG ControllerServlet:80 - computer
+2015-09-25 23:46:39 DEBUG ControllerServlet:86 - entity.Category[ id=9 ]
+2015-09-25 23:46:39 DEBUG ControllerServlet:93 - [entity.Product[ id=32 ], entity.Product[ id=33 ], entity.Product[ id=34 ], entity.Product[ id=35 ]]
+2015-09-25 23:46:39 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:44 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: classic
+Parameters:
+	Name: classic	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:44 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:44 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:44 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:44 DEBUG ControllerServlet:80 - classic
+2015-09-25 23:46:44 DEBUG ControllerServlet:86 - entity.Category[ id=1 ]
+2015-09-25 23:46:44 DEBUG ControllerServlet:93 - [entity.Product[ id=1 ], entity.Product[ id=2 ], entity.Product[ id=3 ], entity.Product[ id=4 ]]
+2015-09-25 23:46:44 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:46:46 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: horror
+Parameters:
+	Name: horror	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?classic
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:46:46 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:46 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:46:46 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:46:46 DEBUG ControllerServlet:80 - horror
+2015-09-25 23:46:46 DEBUG ControllerServlet:86 - entity.Category[ id=2 ]
+2015-09-25 23:46:46 DEBUG ControllerServlet:93 - [entity.Product[ id=5 ], entity.Product[ id=6 ], entity.Product[ id=7 ], entity.Product[ id=8 ]]
+2015-09-25 23:46:46 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:48:50 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/chooseLanguage
+method: GET
+QueryString: language=ru
+Parameters:
+	Name: language	Value: ru
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:48:50 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:48:50 DEBUG ControllerServlet:72 - /chooseLanguage
+2015-09-25 23:48:50 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:48:50 DEBUG ControllerServlet:131 - ru
+2015-09-25 23:48:50 DEBUG ControllerServlet:137 - /index
+2015-09-25 23:49:35 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: fantasy
+Parameters:
+	Name: fantasy	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/chooseLanguage?language=ru
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:49:35 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:49:35 DEBUG ControllerServlet:72 - /catalog
+2015-09-25 23:49:35 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:49:35 DEBUG ControllerServlet:80 - fantasy
+2015-09-25 23:49:35 DEBUG ControllerServlet:86 - entity.Category[ id=3 ]
+2015-09-25 23:49:35 DEBUG ControllerServlet:93 - [entity.Product[ id=9 ], entity.Product[ id=10 ], entity.Product[ id=11 ], entity.Product[ id=12 ]]
+2015-09-25 23:49:35 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:50:06 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/chooseLanguage
+method: GET
+QueryString: language=en
+Parameters:
+	Name: language	Value: en
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?fantasy
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:50:06 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:50:06 DEBUG ControllerServlet:72 - /chooseLanguage
+2015-09-25 23:50:06 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:50:06 DEBUG ControllerServlet:131 - en
+2015-09-25 23:50:06 DEBUG ControllerServlet:137 - /catalog_page
+2015-09-25 23:50:06 DEBUG ControllerServlet:143 - /catalog_page
+2015-09-25 23:50:06 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:50:09 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/chooseLanguage
+method: GET
+QueryString: language=ru
+Parameters:
+	Name: language	Value: ru
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/chooseLanguage?language=en
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:50:09 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:50:09 DEBUG ControllerServlet:72 - /chooseLanguage
+2015-09-25 23:50:09 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:50:09 DEBUG ControllerServlet:131 - ru
+2015-09-25 23:50:09 DEBUG ControllerServlet:137 - /catalog_page
+2015-09-25 23:50:09 DEBUG ControllerServlet:143 - /catalog_page
+2015-09-25 23:50:09 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-25 23:50:17 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/chooseLanguage
+method: GET
+QueryString: language=en
+Parameters:
+	Name: language	Value: en
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/chooseLanguage?language=ru
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=64126e70bc50b9a16f3067fdaffe
+
+2015-09-25 23:50:17 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:50:17 DEBUG ControllerServlet:72 - /chooseLanguage
+2015-09-25 23:50:17 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@bf4cbf0
+2015-09-25 23:50:17 DEBUG ControllerServlet:131 - en
+2015-09-25 23:50:17 DEBUG ControllerServlet:137 - /catalog_page
+2015-09-25 23:50:17 DEBUG ControllerServlet:143 - /catalog_page
+2015-09-25 23:50:17 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-27 17:24:33 INFO  ControllerServlet:48 - start initialize servlet
+2015-09-27 17:24:33 DEBUG ControllerServlet:55 - 3.00
+2015-09-27 17:24:33 DEBUG ControllerServlet:56 - 10.00
+2015-09-27 17:24:33 INFO  ControllerServlet:60 - end initialize servlet
+2015-09-27 17:24:37 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: classic
+Parameters:
+	Name: classic	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:37 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:37 DEBUG ControllerServlet:72 - /catalog
+2015-09-27 17:24:37 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:37 DEBUG ControllerServlet:80 - classic
+2015-09-27 17:24:37 DEBUG ControllerServlet:86 - entity.Category[ id=1 ]
+2015-09-27 17:24:37 DEBUG ControllerServlet:93 - [entity.Product[ id=1 ], entity.Product[ id=2 ], entity.Product[ id=3 ], entity.Product[ id=4 ]]
+2015-09-27 17:24:37 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-27 17:24:40 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/addToCart
+method: POST
+QueryString: null
+Parameters:
+	Name: productId	Value: 1
+	Name: submit	Value: add to cart
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 30
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog;jsessionid=f30eeeb1f1ca8bf3afb27c1e91fa?classic
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:40 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:40 DEBUG ControllerServlet:183 - /addToCart
+2015-09-27 17:24:40 DEBUG ControllerServlet:184 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:40 DEBUG ControllerServlet:185 - 
+2015-09-27 17:24:40 INFO  ControllerServlet:187 - Start Create Validator
+2015-09-27 17:24:40 INFO  ControllerServlet:189 - End Create Validator
+2015-09-27 17:24:40 DEBUG ControllerServlet:203 - 1
+2015-09-27 17:24:40 DEBUG ControllerServlet:208 - entity.Product[ id=1 ]
+2015-09-27 17:24:40 DEBUG ControllerServlet:325 - /WEB-INF/view/catalog_page.jsp
+2015-09-27 17:24:41 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/viewCart
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/addToCart
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:41 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:41 DEBUG ControllerServlet:72 - /viewCart
+2015-09-27 17:24:41 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:41 DEBUG ControllerServlet:103 - 
+2015-09-27 17:24:41 DEBUG ControllerServlet:164 - /WEB-INF/view/cart_page.jsp
+2015-09-27 17:24:48 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/updateCart
+method: POST
+QueryString: null
+Parameters:
+	Name: productId	Value: 1
+	Name: quantity	Value: 
+	Name: submit	Value: update
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 35
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/viewCart
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:48 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:48 DEBUG ControllerServlet:183 - /updateCart
+2015-09-27 17:24:48 DEBUG ControllerServlet:184 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:48 DEBUG ControllerServlet:185 - cart.ShoppingCart@bf3282b
+2015-09-27 17:24:48 INFO  ControllerServlet:187 - Start Create Validator
+2015-09-27 17:24:48 INFO  ControllerServlet:189 - End Create Validator
+2015-09-27 17:24:48 DEBUG ControllerServlet:219 - 1
+2015-09-27 17:24:48 DEBUG ControllerServlet:220 - 
+2015-09-27 17:24:48 DEBUG ControllerServlet:223 - entity.Product[ id=1 ]
+2015-09-27 17:24:54 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: classic
+Parameters:
+	Name: classic	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:54 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:54 DEBUG ControllerServlet:72 - /catalog
+2015-09-27 17:24:54 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:54 DEBUG ControllerServlet:80 - classic
+2015-09-27 17:24:54 DEBUG ControllerServlet:86 - entity.Category[ id=1 ]
+2015-09-27 17:24:54 DEBUG ControllerServlet:93 - [entity.Product[ id=1 ], entity.Product[ id=2 ], entity.Product[ id=3 ], entity.Product[ id=4 ]]
+2015-09-27 17:24:54 DEBUG ControllerServlet:164 - /WEB-INF/view/catalog_page.jsp
+2015-09-27 17:24:55 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/addToCart
+method: POST
+QueryString: null
+Parameters:
+	Name: productId	Value: 1
+	Name: submit	Value: add to cart
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 30
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?classic
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:55 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:55 DEBUG ControllerServlet:183 - /addToCart
+2015-09-27 17:24:55 DEBUG ControllerServlet:184 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:55 DEBUG ControllerServlet:185 - cart.ShoppingCart@bf3282b
+2015-09-27 17:24:55 INFO  ControllerServlet:187 - Start Create Validator
+2015-09-27 17:24:55 INFO  ControllerServlet:189 - End Create Validator
+2015-09-27 17:24:55 DEBUG ControllerServlet:203 - 1
+2015-09-27 17:24:55 DEBUG ControllerServlet:208 - entity.Product[ id=1 ]
+2015-09-27 17:24:55 DEBUG ControllerServlet:325 - /WEB-INF/view/catalog_page.jsp
+2015-09-27 17:24:58 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/viewCart
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/addToCart
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:24:58 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:58 DEBUG ControllerServlet:72 - /viewCart
+2015-09-27 17:24:58 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:24:58 DEBUG ControllerServlet:103 - 
+2015-09-27 17:24:58 DEBUG ControllerServlet:164 - /WEB-INF/view/cart_page.jsp
+2015-09-27 17:25:03 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/checkout
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/viewCart
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:25:03 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:03 DEBUG ControllerServlet:72 - /checkout
+2015-09-27 17:25:03 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:03 DEBUG ControllerServlet:118 - cart.ShoppingCart@bf3282b
+2015-09-27 17:25:03 DEBUG ControllerServlet:164 - /WEB-INF/view/check_page.jsp
+2015-09-27 17:25:10 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/checkout
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:25:10 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:10 DEBUG ControllerServlet:72 - /checkout
+2015-09-27 17:25:10 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:10 DEBUG ControllerServlet:118 - cart.ShoppingCart@bf3282b
+2015-09-27 17:25:10 DEBUG ControllerServlet:164 - /WEB-INF/view/check_page.jsp
+2015-09-27 17:25:13 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/viewCart
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:25:13 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:13 DEBUG ControllerServlet:72 - /viewCart
+2015-09-27 17:25:13 DEBUG ControllerServlet:73 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:13 DEBUG ControllerServlet:103 - 
+2015-09-27 17:25:13 DEBUG ControllerServlet:164 - /WEB-INF/view/cart_page.jsp
+2015-09-27 17:25:19 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/updateCart
+method: POST
+QueryString: null
+Parameters:
+	Name: productId	Value: 1
+	Name: quantity	Value: 
+	Name: submit	Value: update
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 35
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded
+	Name: referer	Value: http://localhost:8080/OnlineStore/viewCart
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=f30eeeb1f1ca8bf3afb27c1e91fa
+
+2015-09-27 17:25:19 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:19 DEBUG ControllerServlet:183 - /updateCart
+2015-09-27 17:25:19 DEBUG ControllerServlet:184 - org.apache.catalina.session.StandardSessionFacade@70ea8f83
+2015-09-27 17:25:19 DEBUG ControllerServlet:185 - cart.ShoppingCart@bf3282b
+2015-09-27 17:25:19 INFO  ControllerServlet:187 - Start Create Validator
+2015-09-27 17:25:19 INFO  ControllerServlet:189 - End Create Validator
+2015-09-27 17:25:19 DEBUG ControllerServlet:219 - 1
+2015-09-27 17:25:19 DEBUG ControllerServlet:220 - 
+2015-09-27 17:25:19 DEBUG ControllerServlet:223 - entity.Product[ id=1 ]
+2015-09-27 17:31:56 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 17:34:51 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 17:41:19 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 17:57:06 INFO  ControllerServlet:48 - start initialize servlet
+2015-09-27 17:57:06 DEBUG ControllerServlet:55 - 3.00
+2015-09-27 17:57:06 DEBUG ControllerServlet:56 - 10.00
+2015-09-27 17:57:06 INFO  ControllerServlet:60 - end initialize servlet
+2015-09-27 18:02:08 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 18:02:46 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 18:09:34 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 18:10:08 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 18:14:58 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 18:20:58 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+2015-09-27 18:21:25 ERROR Validator:24 - User did not enter a number in the quantity field
+java.lang.NumberFormatException: For input string: "qwerty"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at validate.Validator.validateQuantity(Validator.java:22)
+	at validate.ValidatorTest.testValiadteQuantityFalse(ValidatorTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)

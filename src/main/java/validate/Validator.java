@@ -21,7 +21,8 @@ public class Validator {
 
                 i = Integer.parseInt(quantity);
             } catch (NumberFormatException nfe) {                
-                logger.error("User did not enter a number in the quantity field", nfe);
+                logger.error("User did not enter a number in the quantity field", nfe);  
+                return true;
             }
 
             if (i < 0 || i > 99) {
@@ -67,7 +68,7 @@ public class Validator {
         }
         if (phone == null
                 || phone.equals("")
-                || phone.length() < 9) {
+                || phone.length() != 10) {
             errorFlag = true;
             phoneError = true;
             request.setAttribute("phoneError", phoneError);
@@ -86,7 +87,7 @@ public class Validator {
         }
         if (ccNumber == null
                 || ccNumber.equals("")
-                || ccNumber.length() > 19) {
+                || ccNumber.length() != 16) {
             errorFlag = true;
             ccNumberError = true;
             request.setAttribute("ccNumberError", ccNumberError);
