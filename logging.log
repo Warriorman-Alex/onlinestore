@@ -8249,3 +8249,130 @@ Headers:
 2015-09-29 15:23:52 DEBUG ControllerServlet:270 - 
 2015-09-29 15:23:52 DEBUG ControllerServlet:293 - {orderRecord=entity.CustomerOrder[ id=1299 ], customer=entity.Customer[ id=1301 ], products=[entity.Product[ id=1 ]], orderedProducts=[entity.OrderedProduct[ orderedProductPK=entity.OrderedProductPK[ customerOrderId=1299, productId=1 ] ]]}
 2015-09-29 15:23:52 DEBUG ControllerServlet:328 - /WEB-INF/view/buying_page.jsp
+2015-09-29 16:53:12 INFO  ControllerServlet:49 - start initialize servlet
+2015-09-29 16:53:12 DEBUG ControllerServlet:56 - 3.00
+2015-09-29 16:53:12 DEBUG ControllerServlet:57 - 10.00
+2015-09-29 16:53:12 INFO  ControllerServlet:61 - end initialize servlet
+2015-09-29 16:53:15 INFO  ControllerServlet:49 - start initialize servlet
+2015-09-29 16:53:15 DEBUG ControllerServlet:56 - 3.00
+2015-09-29 16:53:15 DEBUG ControllerServlet:57 - 10.00
+2015-09-29 16:53:15 INFO  ControllerServlet:61 - end initialize servlet
+2015-09-29 16:53:27 INFO  ControllerServlet:49 - start initialize servlet
+2015-09-29 16:53:27 DEBUG ControllerServlet:56 - 3.00
+2015-09-29 16:53:27 DEBUG ControllerServlet:57 - 10.00
+2015-09-29 16:53:27 INFO  ControllerServlet:61 - end initialize servlet
+2015-09-29 16:53:30 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/catalog
+method: GET
+QueryString: classic
+Parameters:
+	Name: classic	Value: 
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=961285fdb0c7b4f6da73e24356a1; JSESSIONID=517aaa764f8e216e370288ee18a7; treeForm_tree-hi=treeForm:tree:applicationServer
+
+2015-09-29 16:53:30 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:30 DEBUG ControllerServlet:73 - /catalog
+2015-09-29 16:53:30 DEBUG ControllerServlet:74 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:30 DEBUG ControllerServlet:81 - classic
+2015-09-29 16:53:30 DEBUG ControllerServlet:87 - entity.Category[ id=1 ]
+2015-09-29 16:53:30 DEBUG ControllerServlet:94 - [entity.Product[ id=1 ], entity.Product[ id=2 ], entity.Product[ id=3 ], entity.Product[ id=4 ]]
+2015-09-29 16:53:30 DEBUG ControllerServlet:165 - /WEB-INF/view/catalog_page.jsp
+2015-09-29 16:53:32 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/addToCart
+method: POST
+QueryString: null
+Parameters:
+	Name: productId	Value: 1
+	Name: submit	Value: add to cart
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 30
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded;charset=utf-8
+	Name: referer	Value: http://localhost:8080/OnlineStore/catalog?classic
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=961285fdb0c7b4f6da73e24356a1; JSESSIONID=517aaa764f8e216e370288ee18a7; treeForm_tree-hi=treeForm:tree:applicationServer
+
+2015-09-29 16:53:32 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:32 DEBUG ControllerServlet:186 - /addToCart
+2015-09-29 16:53:32 DEBUG ControllerServlet:187 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:32 DEBUG ControllerServlet:188 - 
+2015-09-29 16:53:32 INFO  ControllerServlet:190 - Start Create Validator
+2015-09-29 16:53:32 INFO  ControllerServlet:192 - End Create Validator
+2015-09-29 16:53:32 DEBUG ControllerServlet:206 - 1
+2015-09-29 16:53:32 DEBUG ControllerServlet:211 - entity.Product[ id=1 ]
+2015-09-29 16:53:32 DEBUG ControllerServlet:328 - /WEB-INF/view/catalog_page.jsp
+2015-09-29 16:53:33 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/checkout
+method: GET
+QueryString: null
+Parameters:
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: referer	Value: http://localhost:8080/OnlineStore/addToCart
+	Name: accept-encoding	Value: gzip, deflate, sdch
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=961285fdb0c7b4f6da73e24356a1; JSESSIONID=517aaa764f8e216e370288ee18a7; treeForm_tree-hi=treeForm:tree:applicationServer
+
+2015-09-29 16:53:33 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:33 DEBUG ControllerServlet:73 - /checkout
+2015-09-29 16:53:33 DEBUG ControllerServlet:74 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:33 DEBUG ControllerServlet:119 - cart.ShoppingCart@70657982
+2015-09-29 16:53:33 DEBUG ControllerServlet:165 - /WEB-INF/view/check_page.jsp
+2015-09-29 16:53:40 DEBUG SessionTimeoutFilter:26 - uri: /OnlineStore/purchase
+method: POST
+QueryString: null
+Parameters:
+	Name: name	Value: Саша
+	Name: email	Value: hurley@mrcluck.com
+	Name: phone	Value: 0503303278
+	Name: address	Value: Karlova 33
+	Name: cityRegion	Value: Regular shipping
+	Name: creditcard	Value: 6666555544443333
+Headers:
+	Name: host	Value: localhost:8080
+	Name: connection	Value: keep-alive
+	Name: content-length	Value: 148
+	Name: cache-control	Value: max-age=0
+	Name: accept	Value: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	Name: origin	Value: http://localhost:8080
+	Name: upgrade-insecure-requests	Value: 1
+	Name: user-agent	Value: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36
+	Name: content-type	Value: application/x-www-form-urlencoded;charset=utf-8
+	Name: referer	Value: http://localhost:8080/OnlineStore/checkout
+	Name: accept-encoding	Value: gzip, deflate
+	Name: accept-language	Value: en-US,en;q=0.8,ru;q=0.6
+	Name: cookie	Value: JSESSIONID=961285fdb0c7b4f6da73e24356a1; JSESSIONID=517aaa764f8e216e370288ee18a7; treeForm_tree-hi=treeForm:tree:applicationServer
+
+2015-09-29 16:53:40 DEBUG SessionTimeoutFilter:29 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:40 DEBUG ControllerServlet:186 - /purchase
+2015-09-29 16:53:40 DEBUG ControllerServlet:187 - org.apache.catalina.session.StandardSessionFacade@3c75d903
+2015-09-29 16:53:40 DEBUG ControllerServlet:188 - cart.ShoppingCart@70657982
+2015-09-29 16:53:40 INFO  ControllerServlet:190 - Start Create Validator
+2015-09-29 16:53:40 INFO  ControllerServlet:192 - End Create Validator
+2015-09-29 16:53:40 DEBUG ControllerServlet:244 - Саша
+2015-09-29 16:53:40 DEBUG ControllerServlet:245 - hurley@mrcluck.com
+2015-09-29 16:53:40 DEBUG ControllerServlet:246 - 0503303278
+2015-09-29 16:53:40 DEBUG ControllerServlet:247 - Karlova 33
+2015-09-29 16:53:40 DEBUG ControllerServlet:248 - Regular shipping
+2015-09-29 16:53:40 DEBUG ControllerServlet:249 - 6666555544443333
+2015-09-29 16:53:40 DEBUG ControllerServlet:254 - false
+2015-09-29 16:53:40 DEBUG ControllerServlet:265 - 1300
+2015-09-29 16:53:40 DEBUG ControllerServlet:270 - 
+2015-09-29 16:53:40 DEBUG ControllerServlet:293 - {orderRecord=entity.CustomerOrder[ id=1300 ], customer=entity.Customer[ id=1302 ], products=[entity.Product[ id=1 ]], orderedProducts=[entity.OrderedProduct[ orderedProductPK=entity.OrderedProductPK[ customerOrderId=1300, productId=1 ] ]]}
+2015-09-29 16:53:40 DEBUG ControllerServlet:328 - /WEB-INF/view/buying_page.jsp
