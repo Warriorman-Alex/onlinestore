@@ -68,7 +68,23 @@
         <location>/WEB-INF/jspf/error/500.jspf</location>
     </error-page>
     
-<!--    <security-constraint>
+    <filter>
+        <filter-name>FormEncodingSetterFilter</filter-name>
+        <filter-class>
+            filter.FormEncodingSetterFilter
+        </filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FormEncodingSetterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!--    <security-constraint>
         <display-name>Constraint1</display-name>
         <web-resource-collection>
             <web-resource-name>Checkout</web-resource-name>

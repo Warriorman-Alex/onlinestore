@@ -7,11 +7,11 @@
     <fmt:setLocale value="${language}" scope="session" />
 </c:if>
 
-<%@page contentType="text/html; charset=Cp1251" pageEncoding="Cp1251"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=cp1251">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/onlinestore.css">
         <link rel="shortcut icon" href="img/icon.ico">
 
@@ -77,13 +77,13 @@
 
                                     <c:choose>
                                         <c:when test="${pageContext.request.locale.language eq 'ru'}">
-                                            русский
+                                            СЂСѓСЃСЃРєРёР№
                                         </c:when>
                                         <c:otherwise>
                                             <c:url var="url" value="chooseLanguage">
                                                 <c:param name="language" value="ru"/>
                                             </c:url>
-                                            <div class="bubble"><a href="${url}">русский</a></div>
+                                            <div class="bubble"><a href="${url}">СЂСѓСЃСЃРєРёР№</a></div>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:when>
@@ -104,13 +104,13 @@
 
                                     <c:choose>
                                         <c:when test="${sessionScope['javax.servlet.jsp.jstl.fmt.locale.session'] eq 'ru'}">
-                                            русский
+                                            СЂСѓСЃСЃРєРёР№
                                         </c:when>
                                         <c:otherwise>
                                             <c:url var="url" value="chooseLanguage">
                                                 <c:param name="language" value="ru"/>
                                             </c:url>
-                                            <div class="bubble"><a href="${url}">русский</a></div>
+                                            <div class="bubble"><a href="${url}">СЂСѓСЃСЃРєРёР№</a></div>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:otherwise>

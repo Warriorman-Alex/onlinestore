@@ -50,7 +50,7 @@ public class AdminServlet extends HttpServlet{
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         HttpSession session = request.getSession(true);
         userPath = request.getServletPath();
         logger.debug(session);
