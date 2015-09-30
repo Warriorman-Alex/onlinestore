@@ -84,7 +84,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
-    <!--    <security-constraint>
+<!--        <security-constraint>
         <display-name>Constraint1</display-name>
         <web-resource-collection>
             <web-resource-name>Checkout</web-resource-name>
@@ -97,6 +97,7 @@
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
     </security-constraint>-->
+        
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>
@@ -105,4 +106,6 @@
             <form-error-page>/admin/error.jsp</form-error-page>
         </form-login-config>
     </login-config>
+    
+    
 </web-app>
