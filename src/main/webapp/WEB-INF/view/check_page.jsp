@@ -29,7 +29,23 @@
                 }
             }
         });
+        $("#deliveryOptions").change(function () {
+            deliveryToggle();
+        });
     });
+    var toggled = false;
+    function deliveryToggle() {
+        if (toggled) {
+            $("#deliveryBoxRegular").removeClass("hidden");
+            $("#deliveryBoxPremium").addClass("hidden");
+            toggled = false;
+            
+        } else {
+            $("#deliveryBoxPremium").removeClass("hidden");
+            $("#deliveryBoxRegular").addClass("hidden");
+            toggled = true;            
+        }
+    }
 </script>
 
 <div id="centerColumn">
@@ -118,7 +134,7 @@
 
                     <br>
                     <fmt:message key='delivery'/>
-                    <select name="cityRegion">
+                    <select id="deliveryOptions" name="cityRegion">
                         <option value="Regular shipping"><fmt:message key='Regular shipping'/></option>
                         <option value="Premium service"><fmt:message key='Premium service'/></option>                        
                     </select>
@@ -143,7 +159,7 @@
         </table>
     </form>
 
-    <div id="infoBox">
+    <div id="deliveryBoxRegular" class="infoBox">
 
         <ul>
             <li><fmt:message key='deliveryText'/></li>
@@ -169,7 +185,7 @@
             </tr>
         </table>
     </div>
-    <div id="infoBox">
+    <div id="deliveryBoxPremium" class="infoBox hidden">
 
         <ul>
             <li><fmt:message key='deliveryTextPremium'/></li>

@@ -291,10 +291,14 @@ label.error {
 
 .inputField { width: 190px }
 
-#infoBox {
+.infoBox {
     width: 300px;
     padding-left: 30px;
     float: left;
+}
+
+.hidden {
+    display:none;
 }
 
 #priceBox {
