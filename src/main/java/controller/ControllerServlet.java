@@ -29,7 +29,8 @@ import validate.Validator;
             "/updateCart",
             "/checkout",
             "/purchase",
-            "/chooseLanguage"})
+            "/chooseLanguage",
+            "/contact"})
 public class ControllerServlet extends HttpServlet {
 
     private static final Logger logger = Logger.getLogger(ControllerServlet.class);
@@ -154,6 +155,12 @@ public class ControllerServlet extends HttpServlet {
                     return;
                 }
             }
+            case ("/cantact"): {                
+
+                // forward to cantact page
+                userPath = "/cantact_page";
+                break;
+            }
         }
 
         // use RequestDispatcher to forward request internally
@@ -177,8 +184,8 @@ public class ControllerServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        response.setContentType ("text/html; charset=UTF-8");
-        
+        response.setContentType("text/html; charset=UTF-8");
+
         String userPath = request.getServletPath();
         HttpSession session = request.getSession();
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");

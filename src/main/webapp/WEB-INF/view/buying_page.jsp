@@ -7,7 +7,7 @@
         <fmt:message key='confirmationTextConfirmation'/>
         <strong>${orderRecord.confirmationNumber}</strong>
         <br>
-        <fmt:message key='confirmationTextConcerning'/> <a href="#"><fmt:message key='contact'/></a>.
+        <fmt:message key='confirmationTextConcerning'/> <a href="<c:url value='contact'/>"><fmt:message key='contact'/></a>.
         <br><br>
         <fmt:message key='Thank'/>
     </p>
