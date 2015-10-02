@@ -1,13 +1,16 @@
 package controller;
 
 import cart.ShoppingCart;
+import email.EmailSender;
 import entity.Category;
 import entity.Product;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Locale;
 import java.util.Map;
+import java.util.logging.Level;
 import javax.ejb.EJB;
+import javax.mail.MessagingException;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -287,6 +290,14 @@ public class ControllerServlet extends HttpServlet {
 
                             // dissociate shopping cart from session
                             cart = null;
+                            
+                            //send email confirm order to customer
+                            EmailSender sender = new EmailSender();
+                            try {
+                                sender.sendMessage(email);
+                            } catch (MessagingException ex) {
+                                logger.error("Exeption", ex);
+                            }
 
                             // end session
                             session.invalidate();
