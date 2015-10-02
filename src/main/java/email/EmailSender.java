@@ -12,51 +12,40 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailSender {
 
-    static final String ENCODING = "UTF-8";
-
-    private String subject = "Subject";
-    private String content = "Test";
-
-    private final String smtpHost = "smtp.gmail.com";
-    private final String smtpPort = "587";
-
-    private final String address = "openshift.onlinestore@gmail.com";
-    private final String login = "openshift.onlinestore";
-    private final String password = "UAorders";
+    Properties mailServerProperties;
+    Session getMailSession;
+    MimeMessage generateMailMessage;
 
     public void sendMessage(String to) throws MessagingException {
-        
-        Authenticator auth = new MyAuthenticator(login, password);
-        Properties props = System.getProperties(); 
-        props.put("mail.smtp.port", smtpPort); 
-        props.put("mail.smtp.host", smtpHost); 
-        props.put("mail.smtp.auth", "true"); 
-        props.put("mail.mime.charset", ENCODING); 
-        Session session = Session.getDefaultInstance(props, auth);
-        
-        Message msg = new MimeMessage(session); 
-        msg.setFrom(new InternetAddress(address)); 
-        msg.setRecipient(Message.RecipientType.TO, new InternetAddress(to)); 
-        msg.setSubject(subject); 
-        msg.setText(content); 
-        Transport.send(msg);
-    }
+        // Step1
+        System.out.println("\n 1st ===> setup Mail Server Properties..");
+        mailServerProperties = System.getProperties();
+        mailServerProperties.put("mail.smtp.port", "587");
+        mailServerProperties.put("mail.smtp.auth", "true");
+        mailServerProperties.put("mail.smtp.starttls.enable", "true");
+        System.out.println("Mail Server Properties have been setup successfully..");
 
-    class MyAuthenticator extends Authenticator {
+        // Step2
+        System.out.println("\n\n 2nd ===> get Mail Session..");
+        getMailSession = Session.getDefaultInstance(mailServerProperties, null);
+        generateMailMessage = new MimeMessage(getMailSession);
+        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("openshift.onlinestore@gmail.com"));
+        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(to));
+        generateMailMessage.setSubject("Greetings from Crunchify..");
+        String emailBody = "Test email by Crunchify.com JavaMail API example. " + "<br><br> Regards, <br>Crunchify Admin";
+        generateMailMessage.setContent(emailBody, "text/html");
+        System.out.println("Mail Session has been created successfully..");
 
-        private String user;
-        private String password;
+        // Step3
+        System.out.println("\n\n 3rd ===> Get Session and Send mail");
+        Transport transport = getMailSession.getTransport("smtp");
 
-        MyAuthenticator(String user, String password) {
-            this.user = user;
-            this.password = password;
-        }
-
-        @Override
-        public PasswordAuthentication getPasswordAuthentication() {
-            String user = this.user;
-            String password = this.password;
-            return new PasswordAuthentication(user, password);
-        }
+		// Enter your correct gmail UserID and Password
+        // if you have 2FA enabled then provide App Specific Password
+        transport.connect("smtp.gmail.com", "openshift.onlinestore@gmail.com", "UAorders");
+        transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
+        transport.close();
     }
 }
+
+
