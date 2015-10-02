@@ -1,43 +1,42 @@
 package email;
 
 import java.util.Properties;
-import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import org.apache.log4j.Logger;
 
 public class EmailSender {
-
+    private static final Logger logger = Logger.getLogger(EmailSender.class);
+    
     Properties mailServerProperties;
     Session getMailSession;
     MimeMessage generateMailMessage;
 
-    public void sendMessage(String to) throws MessagingException {
-        // Step1
-        System.out.println("\n 1st ===> setup Mail Server Properties..");
+    public void sendMessage(String to, String order) throws MessagingException {
+        
+        logger.debug("\n 1st ===> setup Mail Server Properties..");
         mailServerProperties = System.getProperties();
         mailServerProperties.put("mail.smtp.port", "587");
         mailServerProperties.put("mail.smtp.auth", "true");
         mailServerProperties.put("mail.smtp.starttls.enable", "true");
-        System.out.println("Mail Server Properties have been setup successfully..");
+        mailServerProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        logger.debug("Mail Server Properties have been setup successfully..");
 
-        // Step2
-        System.out.println("\n\n 2nd ===> get Mail Session..");
+        logger.debug("\n\n 2nd ===> get Mail Session..");
         getMailSession = Session.getDefaultInstance(mailServerProperties, null);
         generateMailMessage = new MimeMessage(getMailSession);
         generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("openshift.onlinestore@gmail.com"));
-        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(to));
-        generateMailMessage.setSubject("Greetings from Crunchify..");
+        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("openshift.onlinestore@gmail.com"));
+        generateMailMessage.setSubject(order);
         String emailBody = "Test email by Crunchify.com JavaMail API example. " + "<br><br> Regards, <br>Crunchify Admin";
         generateMailMessage.setContent(emailBody, "text/html");
-        System.out.println("Mail Session has been created successfully..");
-
-        // Step3
-        System.out.println("\n\n 3rd ===> Get Session and Send mail");
+        logger.debug("Mail Session has been created successfully..");
+        
+        logger.debug("\n\n 3rd ===> Get Session and Send mail");
         Transport transport = getMailSession.getTransport("smtp");
 
 		// Enter your correct gmail UserID and Password
