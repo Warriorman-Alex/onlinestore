@@ -143,6 +143,7 @@ public class ControllerServlet extends HttpServlet {
                     // so must be forwarded separately
                     userPath = userView;
                     logger.debug(userPath);
+                    break;
 
                 } else {
 
@@ -155,10 +156,10 @@ public class ControllerServlet extends HttpServlet {
                     return;
                 }
             }
-            case ("/cantact"): {                
+            case ("/contact"): {                
 
                 // forward to cantact page
-                userPath = "/cantact_page";
+                userPath = "/contact_page";
                 break;
             }
         }
