@@ -17,7 +17,7 @@ public class EmailSender {
         Properties props = new Properties();
         props.put("mail.smtp.user", "openshift.onlinestore@gmail.com");
         props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("port", "25");
+        props.put("port", "587");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.auth", "true");
 
