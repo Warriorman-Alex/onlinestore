@@ -289,7 +289,15 @@ public class ControllerServlet extends HttpServlet {
                             }
 
                             // dissociate shopping cart from session
-                            cart = null;                         
+                            cart = null;
+                            
+                            //send email confirm order to customer
+                            EmailSender sender = new EmailSender();
+                            try {
+                                sender.sendMessage(email, "Test Order Confirm");
+                            } catch (MessagingException ex) {
+                                logger.error("Exeption", ex);
+                            }
                             
                             // end session
                             session.invalidate();
@@ -303,13 +311,7 @@ public class ControllerServlet extends HttpServlet {
                             Map orderMap = orderManager.getOrderDetails(orderId);
                             logger.debug(orderMap);
                             
-                            //send email confirm order to customer
-                            EmailSender sender = new EmailSender();
-                            try {
-                                sender.sendMessage(email, "Test Order Confirm");
-                            } catch (MessagingException ex) {
-                                logger.error("Exeption", ex);
-                            }
+                            
                             
                             // place order details in request scope
                             request.setAttribute("customer", orderMap.get("customer"));
