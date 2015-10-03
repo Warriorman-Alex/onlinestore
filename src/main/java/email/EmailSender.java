@@ -23,14 +23,14 @@ public class EmailSender {
         mailServerProperties.put("mail.smtp.port", "465");
         mailServerProperties.put("mail.smtp.auth", "true");
         mailServerProperties.put("mail.smtp.starttls.enable", "true");
-        mailServerProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        
         logger.debug("Mail Server Properties have been setup successfully..");
 
         logger.debug("\n\n 2nd ===> get Mail Session..");
         getMailSession = Session.getDefaultInstance(mailServerProperties, null);
         generateMailMessage = new MimeMessage(getMailSession);
-        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("openshift.onlinestore@gmail.com"));
-        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("openshift.onlinestore@gmail.com"));
+        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("warriorman_2006@ukr.net"));
+        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("warriorman_2006@ukr.net"));
         generateMailMessage.setSubject(order);
         String emailBody = "Test email by Crunchify.com JavaMail API example. " + "<br><br> Regards, <br>Crunchify Admin";
         generateMailMessage.setContent(emailBody, "text/html");
@@ -41,7 +41,7 @@ public class EmailSender {
 
 		// Enter your correct gmail UserID and Password
         // if you have 2FA enabled then provide App Specific Password
-        transport.connect("smtp.gmail.com", "openshift.onlinestore@gmail.com", "UAorders");
+        transport.connect("smtp.ukr.net", "warriorman_2006@ukr.net", "45s84as7");
         transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
         transport.close();
     }
