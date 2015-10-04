@@ -1,3 +1,30 @@
+<script src="js/jspdf.js" type="text/javascript"></script>
+<script src="js/jspdf.plugin.from_html.js" type="text/javascript"></script>
+<script src="js/jspdf.plugin.split_text_to_size.js" type="text/javascript"></script>
+<script src="js/jspdf.plugin.standard_fonts_metrics.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    function onPush() {
+        var doc = new jsPDF();
+        var elementHandler = {
+            '#ignorePDF': function (element, renderer) {
+                return true;
+            }
+        };
+        var source = window.document.getElementsByTagName("body")[0];
+        doc.fromHTML(
+                source,
+                15,
+                15,
+                {
+                    'width': 180, 'elementHandlers': elementHandler
+                });
+
+        doc.output("dataurlnewwindow");
+    }
+
+</script>
 
 <div id="singleColumn">
 
@@ -20,9 +47,9 @@
             </tr>
 
             <tr class="tableHeading">
-                <td><fmt:message key='product'/></td>
-                <td><fmt:message key='quantity'/></td>
-                <td><fmt:message key='price'/></td>
+                <td id="ignorePDF"><fmt:message key='product'/></td>
+                <td id="ignorePDF"><fmt:message key='quantity'/></td>
+                <td id="ignorePDF"><fmt:message key='price'/></td>
             </tr>
 
             <c:forEach var="orderedProduct" items="${orderedProducts}" varStatus="iter">
@@ -87,8 +114,11 @@
         </table>
         <form name="confirmButton" method="post" action="">
             <p><input type="submit" value=<fmt:message key='sendToEmail'/>>
-                <input type="submit" value=<fmt:message key='savePdf'/>></p>
-        </form>
+            </p>
+        </form>            
+        <input type="button" name="SaveOnPDF" onclick="onPush();
+                return true;" value=<fmt:message key='savePdf'/>>
+
     </div>
 </div>
 
