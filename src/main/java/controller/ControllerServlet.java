@@ -3,12 +3,12 @@ package controller;
 import cart.ShoppingCart;
 import email.EmailSender;
 import entity.Category;
+import entity.CustomerOrder;
 import entity.Product;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Locale;
 import java.util.Map;
-import java.util.logging.Level;
 import javax.ejb.EJB;
 import javax.mail.MessagingException;
 import javax.servlet.ServletConfig;
@@ -159,7 +159,7 @@ public class ControllerServlet extends HttpServlet {
                     return;
                 }
             }
-            case ("/contact"): {                
+            case ("/contact"): {
 
                 // forward to cantact page
                 userPath = "/contact_page";
@@ -274,7 +274,7 @@ public class ControllerServlet extends HttpServlet {
 
                         int orderId = orderManager.placeOrder(name, email, phone, address, cityRegion, ccNumber, cart);
                         logger.debug(orderId);
-                                                
+
                         if (orderId != 0) {
                             // in case language was set using toggle, get language choice before destroying session
                             Locale locale = (Locale) session.getAttribute("javax.servlet.jsp.jstl.fmt.locale.session");
@@ -290,15 +290,7 @@ public class ControllerServlet extends HttpServlet {
 
                             // dissociate shopping cart from session
                             cart = null;
-                            
-                            //send email confirm order to customer
-                            EmailSender sender = new EmailSender();
-                            try {
-                                sender.sendMessage(email, "Test Order Confirm");
-                            } catch (MessagingException ex) {
-                                logger.error("Exeption", ex);
-                            }
-                            
+
                             // end session
                             session.invalidate();
 
@@ -310,9 +302,11 @@ public class ControllerServlet extends HttpServlet {
                             // get order details
                             Map orderMap = orderManager.getOrderDetails(orderId);
                             logger.debug(orderMap);
+
+                            CustomerOrder order = (CustomerOrder) orderMap.get("orderRecord");
                             
-                            
-                            
+                            String confirmationNumber = "" + order.getConfirmationNumber();                            
+
                             // place order details in request scope
                             request.setAttribute("customer", orderMap.get("customer"));
                             request.setAttribute("products", orderMap.get("products"));
@@ -324,7 +318,17 @@ public class ControllerServlet extends HttpServlet {
                             } else {
                                 request.setAttribute("deliveryCost", surchargePremium);
                             }
-
+                            
+                            
+                            
+                            //send email confirm order to customer
+                            EmailSender sender = new EmailSender();
+                            try {
+                                sender.sendMessageConfirmOrder(email, confirmationNumber, "");
+                            } catch (MessagingException ex) {
+                                logger.error("Exeption", ex);
+                            }                          
+                            
                             userPath = "/buying_page";
                             break;
 

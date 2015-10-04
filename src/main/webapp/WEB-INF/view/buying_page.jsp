@@ -56,7 +56,7 @@
 
             <tr class="lightBlue">
                 <td colspan="3" id="dateProcessedRow"><strong><fmt:message key='date processed'/></strong>
-                    ${orderRecord.dateCreated}
+                        ${orderRecord.dateCreated}
                 </td>
             </tr>
         </table>
@@ -85,6 +85,10 @@
                 </td>
             </tr>
         </table>
+        <form name="confirmButton" method="post" action="">
+            <p><input type="submit" value=<fmt:message key='sendToEmail'/>>
+                <input type="submit" value=<fmt:message key='savePdf'/>></p>
+        </form>
     </div>
 </div>
 

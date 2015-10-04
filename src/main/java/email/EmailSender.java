@@ -1,46 +1,94 @@
 package email;
 
+
+import java.io.IOException;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 import org.apache.log4j.Logger;
 
 public class EmailSender {
 
     private static final Logger logger = Logger.getLogger(EmailSender.class);
 
-    public void sendMessage(String to, String order) throws MessagingException {
+    private final String username = "openshift.onlinestore@gmail.com";
+    private final String password = "UAorders";
+
+    public void sendMessageConfirmOrder(String to, String order, String content) throws MessagingException, IOException {
         Properties props = new Properties();
-        props.put("mail.smtp.user", "openshift.onlinestore@gmail.com");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("port", "587");
-        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
 
         try {
-            Session smtpSession = Session.getDefaultInstance(props, null);
-            smtpSession.setDebug(true);
-            MimeMessage msg = new MimeMessage(smtpSession);
-            msg.setText("Test");
-            msg.setSubject("Test");
-            msg.setFrom(new InternetAddress("openshift.onlinestore@gmail.com"));
 
-            msg.addRecipient(Message.RecipientType.TO, new InternetAddress("warriorman_2006@ukr.net"));
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(to));
+            message.setSubject("Thank you for your purchase. Order number - " + order);
 
-            msg.saveChanges();
-            Transport transport = smtpSession.getTransport("smtp");
-            transport.connect("smtp.gmail.com", "openshift.onlinestore@gmail.com", "UAorders");
-            transport.sendMessage(msg, msg.getAllRecipients());
-            transport.close();
             
-        } catch (Exception mex) {            
-            logger.debug(mex, mex);          
+            message.setContent("", "text/html");
+
+            Transport.send(message);
+
+            logger.debug("Email message send successfully");
+
+        } catch (MessagingException e) {
+            logger.debug("Exception", e);
         }
 
     }
+    
+    public void sendMessageContactUser(String subject, String message){
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+
+            Message mess = new MimeMessage(session);
+            mess.setFrom(new InternetAddress(username));
+            mess.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(username));
+            mess.setSubject(subject);
+            
+            mess.setText(message);
+
+            Transport.send(mess);
+
+            logger.debug("Email message send successfully");
+
+        } catch (MessagingException e) {
+            logger.debug("Exception", e);
+        }
+    }
 }
