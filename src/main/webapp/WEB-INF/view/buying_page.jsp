@@ -2,26 +2,21 @@
 <script src="js/jspdf.plugin.from_html.js" type="text/javascript"></script>
 <script src="js/jspdf.plugin.split_text_to_size.js" type="text/javascript"></script>
 <script src="js/jspdf.plugin.standard_fonts_metrics.js" type="text/javascript"></script>
+<script src="js/jspdf.plugin.addimage.js" type="text/javascript"></script>
+<script src="js/jspdf.plugin.cell.js" type="text/javascript"></script>
+<script src="js/jspdf.debug.js" type="text/javascript"></script>
+<script src="js/addhtml.js" type="text/javascript"></script>
+<script src="js/html2canvas.js" type="text/javascript"></script>
+<script src="js/fabric.min.js" type="text/javascript"></script>
+<script src="js/canvas.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
-    function onPush() {
-        var doc = new jsPDF();
-        var elementHandler = {
-            '#ignorePDF': function (element, renderer) {
-                return true;
-            }
-        };
-        var source = window.document.getElementsByTagName("body")[0];
-        doc.fromHTML(
-                source,
-                15,
-                15,
-                {
-                    'width': 180, 'elementHandlers': elementHandler
-                });
-
-        doc.output("dataurlnewwindow");
+    function onPush() {      
+        var pdf = new jsPDF('p', 'mm', 'a4');        
+        pdf.addHTML(document.body, function () {
+            pdf.save('order.pdf');
+        });
     }
 
 </script>
@@ -90,6 +85,14 @@
 
     </div>
 
+    <strong><fmt:message key='getOrder'/></strong> 
+    <form name="confirmButton" method="post" action="">
+        <p><input type="submit" value="<fmt:message key='sendEmail'/>">
+        </p>
+    </form>            
+    <input type="button" name="SaveOnPDF" onclick="onPush();
+            return true;" value="<fmt:message key='savePDF'/>">
+
     <div class="summaryColumn" >
 
         <table id="deliveryAddressTable" class="detailsTable">
@@ -112,12 +115,7 @@
                 </td>
             </tr>
         </table>
-        <form name="confirmButton" method="post" action="">
-            <p><input type="submit" value=<fmt:message key='sendToEmail'/>>
-            </p>
-        </form>            
-        <input type="button" name="SaveOnPDF" onclick="onPush();
-                return true;" value=<fmt:message key='savePdf'/>>
+
 
     </div>
 </div>
