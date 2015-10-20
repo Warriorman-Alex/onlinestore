@@ -45,7 +45,7 @@ public class EmailSender {
             message.setSubject("Thank you for your purchase. Order number - " + order);
 
             
-            message.setContent("", "text/html");
+            message.setContent(content, "text/html");
 
             Transport.send(message);
 
@@ -91,4 +91,9 @@ public class EmailSender {
             logger.debug("Exception", e);
         }
     }
+    
+    public void sendConfirmMessage(){
+        
+    }
+            
 }

@@ -1,6 +1,6 @@
 <c:set var='view' value='/contact_page' scope='session' />
 
-<form action="EmailSendingServlet" method="post" >
+<form action="EmailFidbekSendingServlet" method="post" >
     
     <p><b><fmt:message key='userContact'/></b><br>
         <input type="text" name="subject" size="40">

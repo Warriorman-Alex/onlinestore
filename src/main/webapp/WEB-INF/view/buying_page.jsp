@@ -12,8 +12,8 @@
 
 <script type="text/javascript">
 
-    function onPush() {      
-        var pdf = new jsPDF('p', 'mm', 'a4');        
+    function onPush() {
+        var pdf = new jsPDF('p', 'mm', 'a4');
         pdf.addHTML(document.body, function () {
             pdf.save('order.pdf');
         });
@@ -86,10 +86,7 @@
     </div>
 
     <strong><fmt:message key='getOrder'/></strong> 
-    <form name="confirmButton" method="post" action="">
-        <p><input type="submit" value="<fmt:message key='sendEmail'/>">
-        </p>
-    </form>            
+                       
     <input type="button" name="SaveOnPDF" onclick="onPush();
             return true;" value="<fmt:message key='savePDF'/>">
 

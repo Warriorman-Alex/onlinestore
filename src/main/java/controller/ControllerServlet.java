@@ -39,7 +39,7 @@ public class ControllerServlet extends HttpServlet {
     private static final Logger logger = Logger.getLogger(ControllerServlet.class);
 
     private String surcharge;
-    private String surchargePremium;
+    private String surchargePremium;    
 
     @EJB
     private CategoryFacade categoryFacade;
@@ -58,7 +58,7 @@ public class ControllerServlet extends HttpServlet {
         surcharge = servletConfig.getServletContext().getInitParameter("deliverySurcharge");
         surchargePremium = servletConfig.getServletContext().getInitParameter("deliverySurchargePremium");
         logger.debug(surcharge);
-        logger.debug(surchargePremium);
+        logger.debug(surchargePremium);        
         // store category list in servlet context
         getServletContext().setAttribute("catalog", categoryFacade.findAll());
 
@@ -164,7 +164,7 @@ public class ControllerServlet extends HttpServlet {
                 // forward to cantact page
                 userPath = "/contact_page";
                 break;
-            }
+            }            
         }
 
         // use RequestDispatcher to forward request internally
@@ -304,8 +304,8 @@ public class ControllerServlet extends HttpServlet {
                             logger.debug(orderMap);
 
                             CustomerOrder order = (CustomerOrder) orderMap.get("orderRecord");
-                            
-                            String confirmationNumber = "" + order.getConfirmationNumber();                            
+
+                            String confirmationNumber = "" + order.getConfirmationNumber();
 
                             // place order details in request scope
                             request.setAttribute("customer", orderMap.get("customer"));
@@ -318,17 +318,15 @@ public class ControllerServlet extends HttpServlet {
                             } else {
                                 request.setAttribute("deliveryCost", surchargePremium);
                             }
-                            
-                            
-                            
+
                             //send email confirm order to customer
                             EmailSender sender = new EmailSender();
+
                             try {
-                                sender.sendMessageConfirmOrder(email, confirmationNumber, "");
+                                sender.sendMessageConfirmOrder(email, confirmationNumber, "Thank you for shopping in our Online Store. Soon, the goods will be delivered to you.");
                             } catch (MessagingException ex) {
                                 logger.error("Exeption", ex);
-                            }                          
-                            
+                            }
                             userPath = "/buying_page";
                             break;
 
